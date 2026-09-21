@@ -442,7 +442,7 @@ body {
 
 .case-card-compact {
   background: #ffffff;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-subtle);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -455,7 +455,7 @@ body {
 }
 
 .case-card-compact.is-open {
-  border-color: #94a3b8;
+  border: 2px solid #cbd5e1;
   box-shadow: var(--shadow-hover);
 }
 

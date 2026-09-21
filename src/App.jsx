@@ -131,15 +131,15 @@ export default function App() {
             <div className="hero-stats-compact-row">
               <div className="hero-stat-compact-item">
                 <span className="stat-compact-number">1,000+ 小時</span>
-                <span className="stat-compact-label">流程自動化年省工時 (BPR 營運實效)</span>
+                <span className="stat-compact-label">流程自動化年省工時</span>
               </div>
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">75+ 位</span>
-                <span className="stat-compact-label">深度質性訪談 (涵蓋門市店長與獨立教師需求)</span>
+                <span className="stat-compact-number">20+ 位</span>
+                <span className="stat-compact-label">深度質性需求訪談</span>
               </div>
               <div className="hero-stat-compact-item">
                 <span className="stat-compact-number">70%+</span>
-                <span className="stat-compact-label">團隊新客業務貢獻率 (具備第一線商業與客戶敏銳度)</span>
+                <span className="stat-compact-label">團隊新客業務貢獻率</span>
               </div>
             </div>
 
