@@ -238,8 +238,7 @@ export default function App() {
                       onClick={() => toggleCase(caseItem.id)}
                       aria-expanded={isExpanded}
                     >
-                      <span>{isExpanded ? '收合解方細節 ↑' : '展開解方細節與規格 ↓'}</span>
-                      {isExpanded ? <ChevronUp className="w-4 h-4 ml-1" /> : <ChevronDown className="w-4 h-4 ml-1" />}
+                      <span>{isExpanded ? '收合解方細節' : '展開解方細節與規格'}</span>
                     </button>
                   </div>
 
