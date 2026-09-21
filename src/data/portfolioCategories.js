@@ -1,13 +1,124 @@
+// 精選 4 大代表專案 (Flagship Selected Cases)
+export const flagshipCases = [
+  {
+    id: "flagship-01-bizsonar",
+    caseNumber: "01",
+    categoryBadge: "AI Matching & B2B Platform",
+    themeColor: "#0284c7",
+    bgPill: "#e0f2fe",
+    title: "Bizsonar AI 展會媒合系統",
+    oneLineSummary: "從 0 到 1 定義雙邊需求與 UX 互動流程，推動 AI 推薦媒合模型落地於國際展會。",
+    metricHighlight: "現場落地運行 • 跨廠商零落差交付",
+    tags: ["PRD 規格制定", "UX Flow", "API 需求對齊", "B2B 媒合"],
+    desc: "大型國際展會解決方案多屬客製化服務，難以用單一類別指引買主。本專案從 0 到 1 定義雙邊買家與展商需求，規劃 User Story 與 UX 互動流程，並與技術合作廠商對齊 API 規格，成功推動 AI 媒合模型在智慧城市展等大型展會現場實際落地。",
+    context: [
+      "買主端痛點：展場面積龐大且展商服務多元，傳統關鍵字搜尋難以精準媒合符合特定場景的供應商。",
+      "展商端痛點：數百家展商資料分散且缺乏標準標籤，潛在 B2B 商業合作機會不易被直接檢索發掘。",
+      "PM 核心任務：在有限專案期程內，梳理現場雙向媒合邏輯，規劃出引導買主輸入需求並自動與展商特徵比對的 AI 媒合產品。"
+    ],
+    decisions: [
+      "需求結構化與 PRD 制定：深入訪談買展雙方痛點，撰寫完整 PRD 規格、User Story 與驗收條件 (Acceptance Criteria)。",
+      "UX Flow 與互動原型：運用 Figma 繪製買主操作流程與直覺互動介面，作為跨部門及外部團隊對齊邏輯的核心依據。",
+      "跨單位技術與 API 對齊：擔任核心 PM 窗口，將商業需求轉譯為 API 資料欄位規格，與合作開發廠商對齊邊界並控管敏捷交付期程。"
+    ],
+    impact: [
+      "產品實際上線運作：成功於國際展會現場落地運行，提供國際買主更精準、即時的展商推薦與商洽管道。",
+      "顯著降低溝通成本：透過具體 Wireframe 與精準功能規格，使技術廠商與業務團隊在時限內達成零歧義交付。"
+    ],
+    tools: ["PRD 規格撰寫", "User Story 定義", "Figma 流程原型", "API 需求對齊", "跨廠商敏捷時程控管"]
+  },
+  {
+    id: "flagship-02-bpr-sop",
+    caseNumber: "02",
+    categoryBadge: "Digital Transformation & Ops",
+    themeColor: "#059669",
+    bgPill: "#d1fae5",
+    title: "展務營運自動化與流程 SOP 重構",
+    oneLineSummary: "診斷跨部門展務行政斷點，導入自動化資料流與標準作業機制，年省 1,000+ 小時工時。",
+    metricHighlight: "年省 1,000+ 小時 • 作業時間 3天 ➔ 30分",
+    tags: ["Process Automation", "流程梳理 SOP", "跨部門變更管理", "年度節省 1000+ hrs"],
+    desc: "面對 20+ 人跨組團隊繁複的展務行政需求，主動發起流程診斷與業務重組 (BPR)。重新規範跨組室資料流，設計防呆統一表單並撰寫 Python 批次處理腳本，將單次作業時間由 3 天大幅縮短為 30 分鐘，年省逾千小時重複作業並減少 3 位人力支出。",
+    context: [
+      "跨部門資料斷點：展會涉及多組室對接，過去各組分散維護各自格式的試算表，人工比對耗時且極易出錯。",
+      "作業耗時低效：欄位格式不一且重複手動登打，單次結案對帳與資料彙整需耗費 3 天繁重人工作業。"
+    ],
+    decisions: [
+      "業務流程全面盤點：繪製跨組室端到端作業流程圖，精準識別出 4 處重複核對與手動登打的卡點。",
+      "標準表單與資料流重塑：重新定義欄位格式規範，設計統一輸入範本防止人為格式偏差。",
+      "Python 批次自動化導入：撰寫 Python 自動批次腳本處理資料比對與檔案命名整理，徹底取代人工查找。",
+      "變更管理與 SOP 固化：制定輕量且易於遵循的日常標準作業程序 (SOP)，確保跨組同仁順暢轉移無痛上手。"
+    ],
+    impact: [
+      "作業時間大幅縮減：單次例行資料整理時間由 3 天縮短為 30 分鐘，年累計節省超過 1,000+ 小時重複工時。",
+      "零採購成本創造高價值：不依賴昂貴外部系統採購，善用現有工具與自動化腳本即為組織節省 3 位人力作業開支。"
+    ],
+    tools: ["BPR 流程盤點", "SOP 規範制定", "Python 自動化腳本", "資料流治理", "跨部門變更管理"]
+  },
+  {
+    id: "flagship-03-pos-dashboard",
+    caseNumber: "03",
+    categoryBadge: "Data Product & Discovery",
+    themeColor: "#d97706",
+    bgPill: "#fef3c7",
+    title: "餐飲 AI 銷量預測與 POS Dashboard",
+    oneLineSummary: "深度執行 20+ 場第一線訪談，將門市營運直覺轉譯為數據特徵，設計多角色數據決策儀表板。",
+    metricHighlight: "20+ 場深度訪談 • 3次點擊內直覺決策",
+    tags: ["使用者研究 (20+ 訪談)", "數據特徵化", "儀表板設計", "敏捷協作"],
+    desc: "於資策會期間參與之數據產品專案。透過 20+ 場使用者深度訪談挖掘餐飲管理者痛點，將第一線店長的備料經驗轉譯為量化特徵，並以 Figma 規劃適合平板操作的多角色數據決策儀表板，輔助門市日常庫存與銷售預測。",
+    context: [
+      "第一線痛點：餐飲門市備料多仰賴店長個人主觀經驗，受天氣、節慶與人流波動影響大，極易造成食材耗損或缺貨。",
+      "數據現況：既有 POS 系統積累龐大交易紀錄，但現場人員缺乏直覺易讀的整理工具輔助日常營運決策。"
+    ],
+    decisions: [
+      "結構化訪綱與深度訪談：獨立規劃結構化訪綱，深度訪談 20+ 位門市管理者，梳理出影響進銷存的關鍵外部特徵（氣溫、降雨、週末人流）。",
+      "數據特徵化與指標收斂：將繁複的統計圖表收斂為「建議備料量」與「庫存風險提示」等核心決策指標。",
+      "資訊架構與多角色 Dashboard：以 Figma 規劃適合平板觸控操作的 Dashboard，將核心查詢與決策路徑簡化於 3 次點擊內。"
+    ],
+    impact: [
+      "完成結構化數據原型：將口語化、直覺式的門市營運經驗沉澱為結構化的介面原型與資料特徵定義。",
+      "提升第一線決策效率：以直覺視覺化取代傳統複雜報表，大幅降低門市人員判讀與操作門檻。"
+    ],
+    tools: ["使用者深度訪談 (20+)", "訪綱設計", "數據特徵定義", "資訊架構 (IA)", "Figma 介面設計", "Dashboard 規劃"]
+  },
+  {
+    id: "flagship-04-mrt-go",
+    caseNumber: "04",
+    categoryBadge: "UX Architecture & Usability",
+    themeColor: "#7c3aed",
+    bgPill: "#ede9fe",
+    title: "生活與公眾服務 App 體驗優化",
+    oneLineSummary: "聚焦台北捷運 GO APP 與媒體閱讀核心體驗，以清晰資訊架構提升操作易用性。",
+    metricHighlight: "黑客松限時概念驗證 • 資訊架構層級重塑",
+    tags: ["資訊架構 (IA)", "Wireframe / Prototype", "Figma", "黑客松專案"],
+    desc: "聚焦於高頻生活與公眾服務場景（捷運盃黑客松參賽專案與工商時報 APP 閱讀體驗優化）。針對特定族群出行痛點與新聞資訊層級混亂問題，透過清晰資訊架構 (IA) 與 Figma 互動原型，大幅提升產品操作流暢度與易用性。",
+    context: [
+      "公眾交通情境痛點：推嬰兒車、攜帶大型行李等特殊族群在複雜站體內缺乏即時路徑指引與車廂擁擠度可視化。",
+      "媒體閱讀情境痛點：財經長文資訊量龐大，舊版介面層級過深且排版壓迫，容易造成使用者閱讀疲勞與跳出。"
+    ],
+    decisions: [
+      "痛點情境定義與動線梳理：深入梳理特定族群在尖峰與轉乘時的卡點，提出車廂擁擠度視覺化與無障礙路徑指引方案。",
+      "資訊架構重整與排版規範：重新規劃導航層級，區隔要聞速覽與深度專題模組，並針對行動端長文調校行高與字級對比。",
+      "高保真 Wireframe 與 Prototype：限時內以 Figma 快速完成流程線框圖與可點擊互動原型，確保跨角色對齊動線邏輯。"
+    ],
+    impact: [
+      "高壓限時概念驗證：於黑客松高壓競賽時間內完成從問題定義、商務延伸到可點擊演示的完整驗證提案。",
+      "確立高效團隊分工：專注於產品邏輯、情境梳理與原型交互，無縫銜接隊友進行視覺 Mockup 產出。"
+    ],
+    tools: ["資訊架構 (IA)", "排版規範 (Typography)", "Wireframing", "Figma 互動原型", "黑客松敏捷提案"]
+  }
+];
+
+// 完整分類資料庫 (保留擴充與查看所有專案功能)
 export const portfolioCategories = [
   {
     id: "ai-solutions",
-    categoryCode: "PORTFOLIO CATEGORY 01",
-    title: "AI 應用與協作類專案",
+    categoryCode: "CATEGORY 01",
+    title: "AI 應用與數據產品",
     englishTitle: "AI Solutions & Data Products",
     slogan: "從場域真實需求出發，將經驗直覺轉化為規格明確的介面原型與輔助工具。",
     coverImage: "/images/portfolio_cat_01_ai.png",
-    themeColor: "#12C0FF",
-    bgPill: "#e6f8ff",
+    themeColor: "#0284c7",
+    bgPill: "#e0f2fe",
     tags: ["需求訪談", "User Story", "資訊架構", "Figma 原型", "AI 協同開發", "資料特徵定義"],
     cases: [
       {
@@ -36,14 +147,14 @@ export const portfolioCategories = [
         id: "case-02-pos-dashboard",
         code: "Case 02",
         name: "餐飲 AI 銷量預測 POS 數據看板",
-        tagline: "資策會實習專案：將現場營運直覺轉化為數據指標與視覺化介面",
-        desc: "於資策會實習期間參與之專案。透過使用者深度訪談挖掘餐飲管理者痛點，將第一線備料經驗整理為量化特徵，並以 Figma 規劃適合平板操作的數據看板介面。",
+        tagline: "資策會專案：將現場營運直覺轉化為數據指標與視覺化介面",
+        desc: "於資策會期間參與之專案。透過使用者深度訪談挖掘餐飲管理者痛點，將第一線備料經驗整理為量化特徵，並以 Figma 規劃適合平板操作的數據看板介面。",
         context: [
           "現場痛點：餐飲門市備料多仰賴店長個人經驗，受天氣與節慶波動影響大，容易造成食材浪費或缺貨。",
           "數據現況：既有 POS 系統積累大量交易紀錄，但現場人員缺乏直覺易讀的整理工具輔助日常決策。"
         ],
         decisions: [
-          "訪綱規劃與需求訪談：獨立規劃結構化訪綱，訪談現場管理者，梳理出影響進銷存的關鍵外部因素（如氣溫、週末人流）。",
+          "訪綱規劃與需求訪談：獨立規劃結構化訪綱，訪談 20+ 位現場管理者，梳理出影響進銷存的關鍵外部因素（如氣溫、週末人流）。",
           "關鍵指標收斂：避免展示繁複的統計圖表，將重點收斂為「建議備料量」與「庫存風險提示」。",
           "介面與資訊架構：以 Figma 規劃適合平板觸控操作的 Dashboard，將核心資訊查詢簡化於 3 次點擊內。"
         ],
@@ -51,7 +162,7 @@ export const portfolioCategories = [
           "完成具體功能雛形：將口語化的業務直覺沉澱為結構化的介面原型與欄位定義。",
           "提升數據判讀效率：以直覺視覺化取代傳統報表，驗證降低第一線人員使用門檻之可行性。"
         ],
-        tools: ["使用者深度訪談", "訪綱設計", "資訊架構 (IA)", "Figma 介面設計", "Dashboard 規劃"]
+        tools: ["使用者深度訪談 (20+)", "訪綱設計", "資訊架構 (IA)", "Figma 介面設計", "Dashboard 規劃"]
       },
       {
         id: "case-03-vibe-coding",
@@ -61,12 +172,12 @@ export const portfolioCategories = [
         desc: "個人實作專案。全程採用 Vibe Coding 模式，以精準自然語言指令引導 AI 協同開發，親自實作元件切分、狀態流轉與本地儲存，快速驗證產品想法。",
         context: [
           "市售目標管理工具多專注於學習或健身單一領域，期望打造符合個人日常檢視節奏的輕量追蹤工具。",
-          "親自驗證以 AI Vibe coding開發流程快速產出有完整前後端，可實際使用的產品。"
+          "親自驗證以 AI Vibe coding 開發流程快速產出有完整前後端，可實際使用的產品。"
         ],
         decisions: [
           "結構化 Prompt 引導：運用釐清需求、功能定義、產品設計思維及程式開發基礎，向 AI 下達明確實作指令。",
-          "狀態與資料管理：規劃資料結構，並透過 google sheet 實現免費便捷的資料儲存。",
-          "將 AI 導入產品：確保完全符合自己的使用情境，並結合AI功能加速記錄操作。"
+          "狀態與資料管理：規劃資料結構，並透過 Google Sheet 實現便捷的資料儲存。",
+          "將 AI 導入產品：確保完全符合自己的使用情境，並結合 AI 功能加速記錄操作。"
         ],
         impact: [
           "快速交付可運作產品：短時間內獨立完成從概念設計到能實際點擊運作之前端工具。",
@@ -77,7 +188,7 @@ export const portfolioCategories = [
       {
         id: "case-04-web-design",
         code: "Case 04",
-        name: "個人職涯導覽系統 (My Trail 前端手刻與優化)",
+        name: "個人職涯導覽系統 (My Trail 響應式作品集)",
         tagline: "親手撰寫 HTML/CSS/JS 基礎架構，並與 AI 協同優化之響應式個人站",
         desc: "個人實作專案。親自手刻編寫 HTML、CSS 與 JavaScript 基礎骨架，並運用 AI 工具協同調校樣式細節與響應式斷點，展現跨領域溝通的技術基礎與排版美感。",
         context: [
@@ -93,20 +204,20 @@ export const portfolioCategories = [
           "獨立端到端落地：親自完成從架構規劃、程式碼撰寫到部署上線之全流程。",
           "掌握前端實作語言：理解程式碼結構與排版限制，有效降低與工程師協同開發時的認知落差。"
         ],
-        tools: ["HTML/CSS/Js", "響應式排版 (RWD)", "Git / GitHub", "AI 協作"]
+        tools: ["HTML/CSS/JS", "響應式排版 (RWD)", "Git / GitHub", "AI 協作"]
       }
     ]
   },
   {
     id: "business-operations",
-    categoryCode: "PORTFOLIO CATEGORY 02",
-    title: "營運流程優化與數位轉型類專案",
+    categoryCode: "CATEGORY 02",
+    title: "營運優化與數位轉型",
     englishTitle: "Business Operations & Digital Transformation",
     slogan: "以流程重構消除作業斷點，導入輕量工具與標準化提升營運人效。",
     coverImage: "/images/portfolio_cat_02_business.png",
-    themeColor: "#D355AC",
-    bgPill: "#fdf2f9",
-    tags: ["BPR 流程重組", "重建 SOP ", "Excel/google form/word/outlook", "Python 資料整理", "行政效率優化"],
+    themeColor: "#059669",
+    bgPill: "#d1fae5",
+    tags: ["BPR 流程重組", "重建 SOP", "Python 自動化", "行政效率優化", "變更管理"],
     cases: [
       {
         id: "case-01-bpr-sop",
@@ -125,42 +236,30 @@ export const portfolioCategories = [
           "建立日常標準 SOP：保持最低限度改版，讓同仁無痛接受新工作流。"
         ],
         impact: [
-          "作業時間大幅縮減：例行資料整理時間由原先 3 天大幅縮短為 30 分鐘，年累計節省逾千小時作業量。",
+          "作業時間大幅縮減：例行資料整理時間由原先 3 天大幅縮短為 30 分鐘，年累計節省逾 1,000+ 小時作業量。",
           "零採購成本解決痛點：不依賴昂貴軟體採購，善用現有工具與基礎腳本即為團隊創造實質人效價值。"
         ],
         tools: ["BPR 流程盤點", "SOP 制定", "數位工具", "Python 資料整理", "跨部門流程推行"]
-      },
-      {
-        id: "case-02-doc-scan-opt",
-        code: "Case 02",
-        name: "公務文件掃描流程優化",
-        tagline: "重塑公務文件數位化效率",
-        desc: "針對大量公文掃描問題，練習設計優化掃描作業流程。",
-        context: [
-          "單位內日常處理大量紙本簽辦但又要讓文件掃描往返台北及台中辦公室。",
-        ],
-
-        tools: ["流程優化練習"]
       }
     ]
   },
   {
     id: "product-design",
-    categoryCode: "PORTFOLIO CATEGORY 03",
-    title: "產品設計與 UI/UX 專案作品",
+    categoryCode: "CATEGORY 03",
+    title: "產品設計與 UI/UX",
     englishTitle: "Product Design & UI/UX",
     slogan: "深入使用者情境，將多維度需求梳理為結構清晰的 Wireframe 與互動原型。",
     coverImage: "/images/portfolio_cat_03_uiux.png",
-    themeColor: "#DE8E18",
-    bgPill: "#fef7ec",
+    themeColor: "#d97706",
+    bgPill: "#fef3c7",
     tags: ["資訊架構 (IA)", "閱讀排版優化", "黑客松敏捷提案", "Wireframe", "Figma Prototype"],
     cases: [
       {
         id: "case-01-ctee-app",
         code: "Case 01",
         name: "工商時報 APP 閱讀體驗與資訊架構重構",
-        tagline: "課堂 2 人合作專案：主責資訊架構梳理與長文排版介面設計",
-        desc: "設計課程 2 人小組合作作品。主責盤點舊版 APP 資訊層級混亂之痛點，重新規劃首頁導覽架構，並針對財經長文調校行距、字級對比與圖表排版，隊友則主責元件整理與視覺 Mockup。",
+        tagline: "課堂合作專案：主責資訊架構梳理與長文排版介面設計",
+        desc: "設計課程小組合作作品。主責盤點舊版 APP 資訊層級混亂之痛點，重新規劃首頁導覽架構，並針對財經長文調校行距、字級對比與圖表排版，隊友則主責元件整理與視覺 Mockup。",
         context: [
           "財經新聞資訊量大且即時，舊版介面層級較多，讀者不易快速鎖定焦點報導。",
           "行動端碎片化閱讀情境下，長文排版若過度壓迫容易造成視覺疲勞。"
@@ -195,7 +294,7 @@ export const portfolioCategories = [
           "高壓限時完成概念驗證：於競賽限制時間內完成從問題定義到可操作演示之完整產品提案。",
           "確立清晰分工模式：專注於產品邏輯、情境梳理與原型交互，使團隊迅速產出高說服力簡報。"
         ],
-        tools: ["Wireframe", "prototype", "企劃提案"]
+        tools: ["Wireframe", "Prototype", "企劃提案", "Figma", "資訊架構"]
       },
       {
         id: "case-03-bean-there",
@@ -222,13 +321,13 @@ export const portfolioCategories = [
   },
   {
     id: "graphic-design",
-    categoryCode: "PORTFOLIO CATEGORY 04",
-    title: "商業視覺與平面設計類作品",
-    englishTitle: "Visual Communication & Graphic Design",
+    categoryCode: "CATEGORY 04",
+    title: "商業視覺與品牌傳達",
+    englishTitle: "Visual Communication & Brand Identity",
     slogan: "以清晰的視覺階層與專業的專案溝通，落實從概念到成品的精準傳達。",
     coverImage: "/images/portfolio_cat_04_graphic.png",
-    themeColor: "#4BE662",
-    bgPill: "#effdf2",
+    themeColor: "#7c3aed",
+    bgPill: "#ede9fe",
     tags: ["CIS 品牌識別", "DM 設計", "跨部門需求溝通", "排版設計", "視覺傳達"],
     cases: [
       {
@@ -264,34 +363,13 @@ export const portfolioCategories = [
         ],
         decisions: [
           "跨組需求收斂與過濾：主動對接內部各組室，先將雜亂意見梳理為架構明確的修改清單，避免矛盾需求。",
-          "精準轉譯設計語言：運用 PPT 與圖解方式向外部設計師具體說明版面重點與修改方向，降低理解落差。",
+          "精準轉譯設計語言：運用 PPT 與圖解方式向外部設計師具體說明版面重點與修改方向，降低理解落差。"
         ],
         impact: [
           "大幅減少無效改版：設計稿均能於 3 輪修改內精準完稿，徹底杜絕設計師來回重工。",
           "零延誤準時交付：如期交付官方手冊與全場宣傳製作物，確保高規格展會接待順暢。"
         ],
         tools: ["跨部門需求轉譯", "PPT 視覺化溝通", "專案進程控管", "外部設計師對接"]
-      },
-      {
-        id: "case-03-reading-posters",
-        code: "Case 03",
-        name: "經典思維書籍視覺概念海報設計",
-        tagline: "個人實作作品：將商業與思維經典觀點轉譯為幾何視覺海報",
-        desc: "個人實作作品。選取經典書籍之核心觀點，親自運用 Figma 嘗試符號化與幾何構圖，探索將抽象文字概念轉譯為直覺視覺海報之排版練習。",
-        context: [
-          "經典書籍思想較為抽象，純文字摘錄不易快速引起讀者閱讀興趣。",
-          "探索如何以幾何圖形與視覺隱喻，精準傳遞文字背後的深層思維模型。"
-        ],
-        decisions: [
-          "概念幾何化提煉：將微小習慣複利、雙系統思考等思維邏輯轉化為幾何線條與色塊結構。",
-          "版面層級編排：親自運用 Figma 嘗試網格對齊，配置標題、引言與版面留白空間。",
-          "視覺轉譯實踐：專注於圖文之間的呼應關係，提升畫面傳達觀點的直覺性。"
-        ],
-        impact: [
-          "完成系列概念視覺產出：交付具備一致性視覺語彙的思維主題概念海報。",
-          "強化排版與視覺敏感度：透過自主練習加深對版面階層、字體對比與留白控制的掌握。"
-        ],
-        tools: ["Figma", "視覺概念轉譯", "幾何構圖", "平面排版"]
       }
     ]
   }
