@@ -394,13 +394,11 @@ export default function App() {
             </a>
 
             <a
-              href="#top"
+              href="https://lin05141021.github.io/my_trail/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="footer-act-btn trail-btn"
-              onClick={(e) => {
-                e.preventDefault();
-                alert('🌿 MY TRAIL 思考軌跡與筆記整理中，敬請期待！');
-              }}
-              title="探索個人思考筆記"
+              title="探索個人思考筆記 MY TRAIL"
             >
               <span>🌿 探索個人思考筆記 MY TRAIL →</span>
             </a>
