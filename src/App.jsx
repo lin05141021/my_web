@@ -476,16 +476,16 @@ export default function App() {
                   <div className="detail-content-wrap">
                     <span className="detail-label">LinkedIn 個人檔案</span>
                     <a
-                      href="https://www.linkedin.com/in/linda-lin-pm"
+                      href="https://www.linkedin.com/in/enju-lin-a16601244"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="detail-value-link"
                     >
-                      linkedin.com/in/linda-lin-pm
+                      linkedin.com/in/enju-lin-a16601244
                     </a>
                   </div>
                   <a
-                    href="https://www.linkedin.com/in/linda-lin-pm"
+                    href="https://www.linkedin.com/in/enju-lin-a16601244"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="copy-mini-btn"
@@ -576,7 +576,7 @@ export default function App() {
             <span className="footer-sep">•</span>
             <a href="./files/林恩汝_履歷.pdf" target="_blank" rel="noopener noreferrer">下載履歷 (PDF)</a>
             <span className="footer-sep">•</span>
-            <a href="https://www.linkedin.com/in/linda-lin-pm" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/enju-lin-a16601244" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
 
           <p className="footer-copy">© {new Date().getFullYear()} 林恩汝 (Lin). All rights reserved.</p>
