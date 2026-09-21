@@ -30,7 +30,8 @@ import {
   Network,
   Rocket,
   Compass,
-  ArrowUpRight
+  ArrowUpRight,
+  Linkedin
 } from 'lucide-react';
 import {
   flagshipCases,
@@ -468,6 +469,31 @@ export default function App() {
                     {copiedType === 'phone-box' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
                 </div>
+
+                {/* LinkedIn 項目 */}
+                <div className="contact-detail-item">
+                  <div className="detail-icon"><Linkedin className="w-4 h-4 text-sky-600" /></div>
+                  <div className="detail-content-wrap">
+                    <span className="detail-label">LinkedIn 個人檔案</span>
+                    <a
+                      href="https://www.linkedin.com/in/linda-lin-pm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="detail-value-link"
+                    >
+                      linkedin.com/in/linda-lin-pm
+                    </a>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/linda-lin-pm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="copy-mini-btn"
+                    title="開啟 LinkedIn"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -530,30 +556,13 @@ export default function App() {
       </main>
 
       {/* ======================================================== */}
-      {/* 區塊 05｜頁尾與個人探索入口 (Footer)                        */}
+      {/* 區塊 05｜頁尾 (Footer)                                    */}
       {/* ======================================================== */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-brand">
             <span className="footer-name">林恩汝 (Lin)</span>
             <span className="footer-title">Product & Transformation</span>
-          </div>
-
-          {/* 個人探索連結 (輕量引導) */}
-          <div className="footer-trail-callout">
-            <span className="trail-callout-text">
-              想了解我更深入的學習筆記與思考軌跡？歡迎造訪{' '}
-              <a
-                href="#top"
-                className="trail-link-accent"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert('MY TRAIL 筆記專區整理中，敬請期待！');
-                }}
-              >
-                MY TRAIL →
-              </a>
-            </span>
           </div>
 
           <div className="footer-links">
@@ -563,7 +572,11 @@ export default function App() {
             <span className="footer-sep">•</span>
             <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>精選專案</a>
             <span className="footer-sep">•</span>
+            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>經歷與認證</a>
+            <span className="footer-sep">•</span>
             <a href="./files/林恩汝_履歷.pdf" target="_blank" rel="noopener noreferrer">下載履歷 (PDF)</a>
+            <span className="footer-sep">•</span>
+            <a href="https://www.linkedin.com/in/linda-lin-pm" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
 
           <p className="footer-copy">© {new Date().getFullYear()} 林恩汝 (Lin). All rights reserved.</p>
