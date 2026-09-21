@@ -208,10 +208,10 @@ export const flagshipCases = [
   },
   {
     id: "case-05-my-trail",
-    title: "MY TRAIL：數位個人知識庫與自建實驗站",
+    title: "MY TRAIL：數位個人空間，全端實踐實驗站",
     subtitle: "系統建構與自驅探索",
     badges: ["自建個人系統", "前端網頁架構", "AI 協同開發", "知識管理"],
-    summary: "從知識管理與數位沈澱痛點出發，自主以 HTML/CSS/JS 與現代工具鏈架設數位花園，實踐由下而上的自驅交付。",
+    summary: "從實踐個人所學技能出發，自主以 HTML/CSS/JS 與AI協作工具打造個人數位展間，實踐從0到1的全端自驅交付。",
     themeColor: "#4f46e5",
     bgPill: "#e0e7ff",
     breakdown: [
