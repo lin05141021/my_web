@@ -19,37 +19,37 @@ export const flagshipCases = [
       {
         step: "02",
         label: "問題 (Problem)",
-        content: "既有平台抽成高達 20%~30%，且家長強烈抗拒額外下載專案 App，導致傳統排課工具無法在私域落地。"
+        content: "現有工具功能無法整合，且家長抗拒額外App，都靠LINE無結構化的訊息人工整理。"
       },
       {
         step: "03",
         label: "發現 (Discovery)",
-        content: "深度調研 55 位資深樂器教師，確認核心訴求為「家長端免安裝門檻」與「系統中立代當黑臉的防放鳥機制」。"
+        content: "深度調研 55 位資深樂器教師，確認核心訴求為「減輕行政負擔」與「系統中立代當黑臉」。"
       },
       {
         step: "04",
         label: "我的角色 (My Role)",
-        content: "擔任 UX Product Manager，主導痛點研究、B端Web與C端LIFF雙軌架構、User Flow 與 LINE LIFF 全流程規格設計。"
+        content: "擔任 UX Product Manager，主導痛點研究、B端Web與C端LIFF雙軌架構、User Flow 與 LINE 全流程規格設計。"
       },
       {
         step: "05",
         label: "解法 (Solution)",
-        content: "設計免下載之 LINE LIFF 完整體驗（課表/調課/繳費/打卡），並串接 GPT-4o 截圖 OCR 自動對帳與 30 秒語音生成雙 RAG 教材聯絡簿。"
+        content: "設計 LINE LIFF 完整體驗（課表/調課/繳費/打卡），並串接 GPT-4o 截圖 OCR 自動對帳與 30 秒語音生成雙 RAG 教材聯絡簿。"
       },
       {
         step: "06",
         label: "跨端協作 (Collaboration)",
-        content: "與英業達軟體主管、和碩 AI 架構師緊密協作，將多模態 AI 與後端資料庫梳理為高易用性之前端操作介面。"
+        content: "與英業達軟體主管、和碩PM緊密協作，實際架設伺服器資料庫與API，並完成前端操作介面串接。"
       },
       {
         step: "07",
         label: "成果 (Outcome)",
-        content: "完成 Vercel 部署與 LINE LIFF 全功能實機驗證（Live Demo），達成 FCP < 1.2s，於台灣人工智慧學校 AIPM 專題獲得高度評價。"
+        content: "完成部署與 LINE LIFF 實機驗證，於台灣人工智慧學校 AI PM 專題獲得肯定。"
       },
       {
         step: "08",
         label: "反思 (Reflection)",
-        content: "AI 產品的精髓在於「將複雜算力隱藏在使用者最熟悉的日常介面背後」，以最低摩擦力解決人性與業務痛點。"
+        content: "AI 產品的設計理念在於「將複雜算力隱藏在使用者最熟悉的日常後」，以最低摩擦力解決人性與業務痛點，讓 AI 真正融入生活。」"
       }
     ]
   },
@@ -80,7 +80,7 @@ export const flagshipCases = [
       {
         step: "04",
         label: "我的角色 (My Role)",
-        content: "發掘問題、主導異業廠商洽談，負責需求規格定義 (PRD) 與雙邊使用者的 UX 互動流程規劃。"
+        content: "發掘問題、主導異業廠商洽談，負責需求規格定義與雙邊使用者的 UX 互動流程規劃。"
       },
       {
         step: "05",
@@ -90,7 +90,7 @@ export const flagshipCases = [
       {
         step: "06",
         label: "跨端協作 (Collaboration)",
-        content: "居中協調外部演算法工程團隊與內部展務營運同仁，對齊系統功能與商業上線時程。"
+        content: "居中協調外部工程團隊與內部展務營運同仁，對齊系統功能與商業上線時程。"
       },
       {
         step: "07",
@@ -203,6 +203,57 @@ export const flagshipCases = [
         step: "08",
         label: "反思 (Reflection)",
         content: "資料產品的重點在於「決策轉譯」，先釐清使用者在特定情境要做出什麼決定，再給予精確資訊。"
+      }
+    ]
+  },
+  {
+    id: "case-05-my-trail",
+    title: "MY TRAIL：數位個人知識庫與自建實驗站",
+    subtitle: "系統建構與自驅探索",
+    badges: ["自建個人系統", "前端網頁架構", "AI 協同開發", "知識管理"],
+    summary: "從知識管理與數位沈澱痛點出發，自主以 HTML/CSS/JS 與現代工具鏈架設數位花園，實踐由下而上的自驅交付。",
+    themeColor: "#4f46e5",
+    bgPill: "#e0e7ff",
+    breakdown: [
+      {
+        step: "01",
+        label: "背景 (Context)",
+        content: "跨領域學習希望自己能實踐從設計端跨域工程端，並以個人數位空間為題紀錄各專案實踐過程。"
+      },
+      {
+        step: "02",
+        label: "問題 (Problem)",
+        content: "純自然語言AI架站工具技術尚難以靈活客製呈現與更加感性的內容。"
+      },
+      {
+        step: "03",
+        label: "發現 (Discovery)",
+        content: "梳理個人閱讀與整理習慣，確認核心需求為「極簡載入體驗」、「清晰的模組化資訊架構」與「完全由自己掌握的程式碼底層」。"
+      },
+      {
+        step: "04",
+        label: "我的角色 (My Role)",
+        content: "全端獨立負責：涵蓋站點資訊架構、UI/UX 介面設計、前端程式撰寫與 GitHub Pages 雲端部署。"
+      },
+      {
+        step: "05",
+        label: "解法 (Solution)",
+        content: "採用語意化 HTML5、現代 CSS Grid 與純 JavaScript，並善用 AI 協同開發（Vibe Coding）快速除錯與迭代，搭建響應式 (RWD) 版本。"
+      },
+      {
+        step: "06",
+        label: "跨端協作 (Collaboration)",
+        content: "實踐「人機協同」開發工作流，將 AI 工具作為個人專屬技術顧問，主導規格定義、邊界測試與程式碼審查。"
+      },
+      {
+        step: "07",
+        label: "成果 (Outcome)",
+        content: "成功完成獨立站點部署，建立可長期維護的數位展間，並實證非工程背景亦能透過自驅學習完成系統性交付。"
+      },
+      {
+        step: "08",
+        label: "反思 (Reflection)",
+        content: "自己動手寫程式不是為了成為純工程師，而是為了深刻理解技術邊界與開發邏輯，進而在產品專案中與工程團隊更有效率地對話。"
       }
     ]
   }
