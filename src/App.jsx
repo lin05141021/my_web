@@ -7,7 +7,6 @@ import {
   Layers,
   Workflow,
   Cpu,
-  CheckCircle2,
   ChevronDown,
   ChevronUp,
   ChevronRight,
@@ -30,7 +29,8 @@ import {
   Rocket,
   Compass,
   ArrowUpRight,
-  Linkedin
+  Linkedin,
+  BookOpen
 } from 'lucide-react';
 import {
   flagshipCases,
@@ -41,9 +41,9 @@ import {
 } from './data/portfolioCategories';
 
 export default function App() {
-  // 記錄展開的專案 ID (Set 或 Object)
+  // 記錄展開的專案 ID
   const [expandedCases, setExpandedCases] = useState({});
-  // 記錄是否展開更多輔助專案
+  // 記錄是否展開更多輔助專案 (預設折疊)
   const [showAuxiliary, setShowAuxiliary] = useState(false);
   const [copiedType, setCopiedType] = useState(null);
 
@@ -68,7 +68,7 @@ export default function App() {
   };
 
   return (
-    <div className="portfolio-app modern-executive-theme">
+    <div className="portfolio-app modern-executive-theme compact-layout">
       {/* 頂部導覽列 Navbar */}
       <nav className="navbar">
         <div className="nav-container">
@@ -82,21 +82,21 @@ export default function App() {
           >
             <div className="logo-initials-badge">LIN</div>
             <div className="logo-text-group">
-              <span className="logo-name">林恩汝 Lin</span>
+              <span className="logo-name">林恩汝 (Lin)</span>
               <span className="logo-sub">Product & Transformation</span>
             </div>
           </a>
 
           <div className="nav-links">
             <a href="#capabilities" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>核心能力</a>
-            <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>精選專案</a>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>經歷與認證</a>
+            <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>代表專案</a>
+            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>職涯歷練</a>
             <a
-              href="#contact"
+              href="#footer"
               className="nav-contact-btn"
-              onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
+              onClick={(e) => { e.preventDefault(); handleNavClick('footer'); }}
             >
-              聯絡洽談
+              聯絡交流
             </a>
           </div>
         </div>
@@ -105,19 +105,15 @@ export default function App() {
       {/* 主要頁面內容 */}
       <main>
         {/* ======================================================== */}
-        {/* 區塊 01｜首頁主視覺 (Hero)                                */}
+        {/* 區塊 01｜首頁主視覺 (Hero Section)                         */}
         {/* ======================================================== */}
-        <header id="top" className="hero-section">
+        <header id="top" className="hero-section hero-compact">
           <div className="hero-content">
-            {/* 個人定位標籤 */}
+            {/* 頂部關鍵字標籤 (Role Eyebrow) */}
             <div className="hero-badge-row">
               <span className="executive-badge">
                 <span className="status-indicator-dot"></span>
-                產品與數位轉型專案經理 (Product & Transformation)
-              </span>
-              <span className="executive-location-tag">
-                <MapPin className="w-3.5 h-3.5 mr-1 inline text-slate-500" />
-                台北市 (可遠端 / 混合辦公)
+                產品經理 ｜ 數位轉型與流程優化 ｜ AI 應用規劃
               </span>
             </div>
 
@@ -126,85 +122,77 @@ export default function App() {
               從問題到解方：將複雜業務需求轉化為可落地的數位解方
             </h1>
 
-            {/* 核心論述 */}
+            {/* 副標題 (P) */}
             <p className="hero-name-subtitle">
-              我擅長從第一線業務痛點與使用者需求出發，梳理複雜流程，連結商業、產品與技術團隊，推動 AI 應用、流程自動化與產品功能實際落地。
+              具備 9+ 年跨教育、公共制度、科技法人與國際展會歷練。擅長深入第一線業務現場釐清痛點，連結商業、設計與工程團隊，推動 AI 應用、流程自動化與產品功能實際交付。
             </p>
 
-            {/* 三大實績數據 (Stats Counter) */}
-            <div className="hero-metric-bar">
-              <div className="hero-metric-item">
-                <span className="hero-metric-num">9+ <small className="metric-unit-sm">年</small></span>
-                <span className="hero-metric-label">跨領域推進與利害關係人管理經驗</span>
+            {/* 關鍵成效指標 (Stats Row - 水平三欄緊湊排版) */}
+            <div className="hero-stats-compact-row">
+              <div className="hero-stat-compact-item">
+                <span className="stat-compact-number">1,000+ 小時</span>
+                <span className="stat-compact-label">流程自動化年省工時 (BPR 營運實效)</span>
               </div>
-              <div className="hero-metric-divider"></div>
-              <div className="hero-metric-item">
-                <span className="hero-metric-num">1,000+ <small className="metric-unit-sm">小時</small></span>
-                <span className="hero-metric-label">流程重構年省重複工時</span>
+              <div className="hero-stat-compact-item">
+                <span className="stat-compact-number">75+ 位</span>
+                <span className="stat-compact-label">深度質性訪談 (涵蓋門市店長與獨立教師需求)</span>
               </div>
-              <div className="hero-metric-divider"></div>
-              <div className="hero-metric-item">
-                <span className="hero-metric-num">20+ <small className="metric-unit-sm">場</small></span>
-                <span className="hero-metric-label">深度使用者與第一線訪談</span>
+              <div className="hero-stat-compact-item">
+                <span className="stat-compact-number">70%+</span>
+                <span className="stat-compact-label">團隊新客業務貢獻率 (具備第一線商業與客戶敏銳度)</span>
               </div>
             </div>
 
-            {/* 行動按鈕 (CTA) */}
-            <div className="hero-cta-group">
+            {/* 行動按鈕列 (CTAs) */}
+            <div className="hero-actions-row">
               <a
                 href="#cases"
-                className="btn-primary-hero"
+                className="hero-btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick('cases');
                 }}
               >
-                查看精選專案
-                <ArrowRight className="w-4 h-4 ml-2 inline" />
+                瀏覽代表專案
+                <ArrowRight className="w-4 h-4 ml-1.5 inline" />
               </a>
               <a
                 href="./files/林恩汝_履歷.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary-hero"
+                className="hero-btn-secondary"
               >
-                <Download className="w-4 h-4 mr-2 inline" />
-                下載完整簡歷 (PDF)
+                <Download className="w-4 h-4 mr-1.5 inline text-slate-600" />
+                下載完整履歷 (PDF)
               </a>
             </div>
           </div>
         </header>
 
         {/* ======================================================== */}
-        {/* 區塊 02｜核心能力矩陣 (What I Can Do)                     */}
+        {/* 區塊 02｜核心能力與工作方法 (Core Competencies)             */}
         {/* ======================================================== */}
-        <section id="capabilities" className="section-container">
+        <section id="capabilities" className="section-container section-compact bg-slate-subtle">
           <div className="section-header">
-            <span className="section-tag">WHAT I CAN DO</span>
-            <h2 className="section-title">核心能力矩陣</h2>
-            <p className="section-desc">以四步驟工作方法論呈現，從需求洞察到系統化交付的完整路徑</p>
+            <span className="section-tag">CORE COMPETENCIES</span>
+            <h2 className="section-title">核心能力與工作方法</h2>
+            <p className="section-desc">
+              跨領域不是切換跑道，而是在不同場域淬鍊同一套方法：從現場探索真實痛點，梳理為系統規格，協同跨職能團隊如期落地。
+            </p>
           </div>
 
           <div className="capabilities-grid-4">
-            {capabilities.map((cap, idx) => (
-              <div key={idx} className="capability-card">
-                <div className="capability-card-header">
-                  <span className="capability-step-num">{cap.step}</span>
-                  <div className={`capability-icon-bubble cap-step-${cap.step}`}>
-                    {cap.step === '01' && <Search className="w-4 h-4 text-sky-600" />}
-                    {cap.step === '02' && <FileText className="w-4 h-4 text-indigo-600" />}
-                    {cap.step === '03' && <Network className="w-4 h-4 text-emerald-600" />}
-                    {cap.step === '04' && <Rocket className="w-4 h-4 text-amber-600" />}
-                  </div>
+            {capabilities.map((cap) => (
+              <div key={cap.step} className="capability-card-compact">
+                <div className="cap-card-header">
+                  <span className="cap-step-badge">{cap.step}</span>
+                  <h3 className="cap-phase-title">{cap.phase}</h3>
                 </div>
-
-                <h3 className="capability-title">{cap.phase}</h3>
-                <p className="capability-lead">{cap.lead}</p>
-
-                <ul className="capability-list">
-                  {cap.points.map((pt, pIdx) => (
-                    <li key={pIdx}>
-                      <CheckCircle2 className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <p className="cap-card-lead">{cap.lead}</p>
+                <ul className="cap-points-list">
+                  {cap.points.map((pt, idx) => (
+                    <li key={idx}>
+                      <span className="cap-check-icon">✓</span>
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -215,71 +203,52 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* 區塊 03｜精選專案 (Selected Cases)                        */}
+        {/* 區塊 03｜代表專案與落地成果 (Featured Case Studies)        */}
         {/* ======================================================== */}
-        <section id="cases" className="section-container bg-slate-subtle">
+        <section id="cases" className="section-container section-compact">
           <div className="section-header">
-            <span className="section-tag">SELECTED CASES</span>
-            <h2 className="section-title">精選專案</h2>
+            <span className="section-tag">FEATURED CASE STUDIES</span>
+            <h2 className="section-title">代表專案與落地成果</h2>
             <p className="section-desc">
-              預設只呈現核心摘要，點擊即可平滑展開 <strong>8 項結構化專案拆解</strong>
+              以 0→1 產品交付、AI 應用導入與業務流程重構為核心的代表性實踐。
             </p>
           </div>
 
-          {/* 4 大旗艦專案列表 */}
-          <div className="cases-stack-list">
-            {flagshipCases.map((cs, index) => {
-              const isExpanded = !!expandedCases[cs.id];
+          <div className="cases-list-compact">
+            {flagshipCases.map((caseItem) => {
+              const isExpanded = !!expandedCases[caseItem.id];
               return (
-                <article key={cs.id} className={`case-accordion-card ${isExpanded ? 'is-expanded' : ''}`}>
-                  {/* 卡片外層 (預設顯示) */}
-                  <div className="case-outer-box" onClick={() => toggleCase(cs.id)}>
-                    <div className="case-outer-top">
-                      <div className="case-outer-badges">
-                        <span className="case-category-pill" style={{ color: cs.themeColor, backgroundColor: cs.bgPill }}>
-                          {cs.subtitle}
-                        </span>
-                        {cs.badges.map((b, bIdx) => (
-                          <span key={bIdx} className="case-tag-pill">
-                            {b}
-                          </span>
+                <article key={caseItem.id} className={`case-card-compact ${isExpanded ? 'is-open' : ''}`}>
+                  {/* 卡片主體 (扁平精簡：標籤、標題、1 句摘要、展開按鈕) */}
+                  <div className="case-compact-main">
+                    <div className="case-header-row">
+                      <div className="case-badges-wrap">
+                        {caseItem.badges.map((b, i) => (
+                          <span key={i} className="case-mini-badge">{b}</span>
                         ))}
                       </div>
-                      <span className="case-number-badge">CASE 0{index + 1}</span>
                     </div>
 
-                    <h3 className="case-outer-title">{cs.title}</h3>
-                    <p className="case-outer-summary">{cs.summary}</p>
+                    <h3 className="case-compact-title">{caseItem.title}</h3>
+                    <p className="case-compact-summary">{caseItem.summary}</p>
 
-                    <div className="case-outer-footer">
-                      <button
-                        type="button"
-                        className="btn-toggle-breakdown"
-                        style={{ color: cs.themeColor }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleCase(cs.id);
-                        }}
-                      >
-                        {isExpanded ? (
-                          <>
-                            收起 8 項專案拆解 <ChevronUp className="w-4 h-4 ml-1 inline" />
-                          </>
-                        ) : (
-                          <>
-                            查看 8 項專案拆解 <ChevronDown className="w-4 h-4 ml-1 inline" />
-                          </>
-                        )}
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      className="btn-toggle-compact"
+                      onClick={() => toggleCase(caseItem.id)}
+                      aria-expanded={isExpanded}
+                    >
+                      <span>{isExpanded ? '收合解方細節 ↑' : '展開解方細節與規格 ↓'}</span>
+                      {isExpanded ? <ChevronUp className="w-4 h-4 ml-1" /> : <ChevronDown className="w-4 h-4 ml-1" />}
+                    </button>
                   </div>
 
-                  {/* 卡片展開內容 (8 格結構化網格) */}
+                  {/* 展開內容 (8 格結構拆解) */}
                   {isExpanded && (
-                    <div className="case-breakdown-expand animate-fadeIn">
+                    <div className="case-breakdown-expand">
                       <div className="breakdown-grid-8">
-                        {cs.breakdown.map((item, bIdx) => (
-                          <div key={bIdx} className="breakdown-grid-item">
+                        {caseItem.breakdown.map((item) => (
+                          <div key={item.step} className="breakdown-grid-item">
                             <div className="breakdown-item-header">
                               <span className="breakdown-step-badge">{item.step}</span>
                               <span className="breakdown-item-label">{item.label}</span>
@@ -295,28 +264,25 @@ export default function App() {
             })}
           </div>
 
-          {/* 更多輔助專案 (預設收合 / 輕量標籤列表) */}
-          <div className="auxiliary-section-wrap">
+          {/* ======================================================== */}
+          {/* 區塊 04｜更多專案與探索 (Additional Projects)              */}
+          {/* ======================================================== */}
+          <div className="auxiliary-accordion-wrap">
             <button
               type="button"
-              className="btn-toggle-auxiliary"
+              className="auxiliary-accordion-header"
               onClick={() => setShowAuxiliary(!showAuxiliary)}
             >
-              {showAuxiliary ? (
-                <>
-                  收起更多輔助專案 <ChevronUp className="w-4 h-4 ml-1.5 inline" />
-                </>
-              ) : (
-                <>
-                  展開更多輔助專案 (4 個專案) <ChevronDown className="w-4 h-4 ml-1.5 inline" />
-                </>
-              )}
+              <span className="accordion-title-text">
+                {showAuxiliary ? '[-] 收合其他產品設計與概念驗證專案' : '[+] 查看更多產品設計與概念驗證專案 (點擊展開)'}
+              </span>
+              {showAuxiliary ? <ChevronUp className="w-4 h-4 text-slate-500" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
             </button>
 
             {showAuxiliary && (
-              <div className="auxiliary-cards-grid animate-fadeIn">
-                {auxiliaryCases.map((aux, aIdx) => (
-                  <div key={aIdx} className="auxiliary-card">
+              <div className="auxiliary-cards-grid">
+                {auxiliaryCases.map((aux, idx) => (
+                  <div key={idx} className="auxiliary-card">
                     <span className="auxiliary-category-tag">{aux.category}</span>
                     <h4 className="auxiliary-title">{aux.title}</h4>
                     <p className="auxiliary-desc">{aux.description}</p>
@@ -328,163 +294,55 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* 區塊 04｜核心背景與重點進修 (Experience & Credentials)      */}
+        {/* 區塊 05｜職涯歷練與專業認證 (Experience & Credentials)     */}
         {/* ======================================================== */}
-        <section id="experience" className="section-container">
+        <section id="experience" className="section-container section-compact bg-slate-subtle">
           <div className="section-header">
             <span className="section-tag">EXPERIENCE & CREDENTIALS</span>
-            <h2 className="section-title">核心背景與重點進修</h2>
-            <p className="section-desc">實戰歷練主線與持續深化的商管 / AI 專業認證</p>
-          </div>
-
-          <div className="experience-credentials-container">
-            {/* 職涯歷練主線 */}
-            <div className="career-timeline-panel">
-              <h3 className="panel-subhead-title">
-                <Building2 className="w-4 h-4 mr-2 inline text-slate-700" />
-                職涯歷練主線
-              </h3>
-              <div className="career-timeline-list">
-                {careerExperiences.map((exp, eIdx) => (
-                  <div key={eIdx} className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-content">
-                      <div className="timeline-header-row">
-                        <div className="timeline-role-group">
-                          <strong className="timeline-role">{exp.role}</strong>
-                          <span className="timeline-company">｜ {exp.company}</span>
-                        </div>
-                        <span className="timeline-period">{exp.period}</span>
-                      </div>
-                      <p className="timeline-highlights">{exp.highlights}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* 重點進修與認證 (高階膠囊標籤) */}
-            <div className="credentials-badges-panel">
-              <h3 className="panel-subhead-title">
-                <Award className="w-4 h-4 mr-2 inline text-slate-700" />
-                重點進修與專業認證
-              </h3>
-              <div className="badges-flex-wrap">
-                {credentialBadges.map((badge, bIdx) => (
-                  <span key={bIdx} className="credential-capsule-badge">
-                    <Check className="w-3.5 h-3.5 mr-1.5 text-emerald-600 inline" />
-                    {badge}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* 區塊 05｜聯絡洽談與個人探索入口 (Contact & Connect)         */}
-        {/* ======================================================== */}
-        <section id="contact" className="section-container bg-slate-subtle">
-          <div className="section-header">
-            <span className="section-tag">LET'S CONNECT</span>
-            <h2 className="section-title">聯絡洽談</h2>
+            <h2 className="section-title">職涯歷練與專業認證</h2>
             <p className="section-desc">
-              期待將問題結構化、跨界溝通與 AI / 自動化落地經驗投入團隊，歡迎隨時交流討論！
+              跨公共制度、科技法人與國際展會的實戰推進歷練。
             </p>
           </div>
 
-          <div className="contact-centered-wrapper">
-            <div className="contact-info-panel-centered">
-              <div className="contact-personal-card">
-                <div className="contact-avatar-badge">林</div>
-                <div>
-                  <h3 className="contact-name">林恩汝 (Lin)</h3>
-                  <p className="contact-title">Product & Transformation PM</p>
-                </div>
+          <div className="experience-credentials-container">
+            {/* 左側：職涯歷練主線 */}
+            <div className="career-timeline-panel">
+              <h3 className="panel-subhead-title">
+                <Building2 className="w-5 h-5 mr-2 text-sky-600 inline" />
+                職涯歷練主線
+              </h3>
+              <div className="career-timeline-list">
+                {careerExperiences.map((exp, idx) => (
+                  <div key={idx} className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-header-row">
+                      <div>
+                        <span className="timeline-company font-bold">{exp.company}</span>
+                        <span className="timeline-sep"> ｜ </span>
+                        <span className="timeline-role">{exp.role}</span>
+                      </div>
+                      <span className="timeline-period">{exp.period}</span>
+                    </div>
+                    <p className="timeline-highlights">{exp.highlights}</p>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              <p className="contact-welcome-statement">
-                歡迎就 AI 產品規劃、數位轉型推進、流程自動化重構或各項專案合作機會進行交流討論！
-              </p>
-
-              {/* 履歷下載 Banner */}
-              <a
-                href="./files/林恩汝_履歷.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-download-banner"
-              >
-                <div className="banner-icon-box">
-                  <Download className="w-5 h-5 text-sky-600" />
-                </div>
-                <div className="banner-text-box">
-                  <span className="banner-title">下載完整履歷 (Download Resume)</span>
-                  <span className="banner-sub">PDF 格式 • 包含完整專案與經歷細節</span>
-                </div>
-                <ChevronRight className="w-4 h-4 text-slate-400 ml-auto" />
-              </a>
-
-              <div className="contact-details">
-                {/* Email 項目 */}
-                <div className="contact-detail-item">
-                  <div className="detail-icon"><Mail className="w-4 h-4 text-sky-600" /></div>
-                  <div className="detail-content-wrap">
-                    <span className="detail-label">電子郵件 E-mail</span>
-                    <a href="mailto:kim05141021@gmail.com" className="detail-value-link">
-                      kim05141021@gmail.com
-                    </a>
+            {/* 右側：重點進修與認證 */}
+            <div className="credentials-badges-panel">
+              <h3 className="panel-subhead-title">
+                <Award className="w-5 h-5 mr-2 text-emerald-600 inline" />
+                重點進修與認證
+              </h3>
+              <div className="badges-flex-wrap">
+                {credentialBadges.map((badge, idx) => (
+                  <div key={idx} className="credential-capsule-badge">
+                    <Check className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0" />
+                    <span>{badge}</span>
                   </div>
-                  <button
-                    className="copy-mini-btn"
-                    onClick={() => handleCopy('kim05141021@gmail.com', 'email-box')}
-                    title="複製信箱"
-                  >
-                    {copiedType === 'email-box' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-
-                {/* 電話項目 */}
-                <div className="contact-detail-item">
-                  <div className="detail-icon"><Phone className="w-4 h-4 text-sky-600" /></div>
-                  <div className="detail-content-wrap">
-                    <span className="detail-label">聯絡電話</span>
-                    <a href="tel:0989236756" className="detail-value-link">
-                      0989-236-756
-                    </a>
-                  </div>
-                  <button
-                    className="copy-mini-btn"
-                    onClick={() => handleCopy('0989236756', 'phone-box')}
-                    title="複製電話"
-                  >
-                    {copiedType === 'phone-box' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-
-                {/* LinkedIn 項目 */}
-                <div className="contact-detail-item">
-                  <div className="detail-icon"><Linkedin className="w-4 h-4 text-sky-600" /></div>
-                  <div className="detail-content-wrap">
-                    <span className="detail-label">LinkedIn 個人檔案</span>
-                    <a
-                      href="https://www.linkedin.com/in/enju-lin-a16601244"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="detail-value-link"
-                    >
-                      linkedin.com/in/enju-lin-a16601244
-                    </a>
-                  </div>
-                  <a
-                    href="https://www.linkedin.com/in/enju-lin-a16601244"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="copy-mini-btn"
-                    title="開啟 LinkedIn"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -492,30 +350,66 @@ export default function App() {
       </main>
 
       {/* ======================================================== */}
-      {/* 區塊 05｜頁尾 (Footer)                                    */}
+      {/* 區塊 06｜聯絡資訊與頁尾整併 (Compact All-in-One Footer)     */}
       {/* ======================================================== */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <span className="footer-name">林恩汝 (Lin)</span>
-            <span className="footer-title">Product & Transformation</span>
+      <footer id="footer" className="footer-all-in-one">
+        <div className="footer-compact-banner">
+          {/* 左側區塊 (Text) */}
+          <div className="footer-banner-left">
+            <h3 className="footer-main-lead">期待與優秀團隊一同創造改變</h3>
+            <p className="footer-sub-lead">歡迎洽談產品管理、數位轉型或跨職能協作機會</p>
           </div>
 
-          <div className="footer-links">
-            <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>回到頂部</a>
-            <span className="footer-sep">•</span>
-            <a href="#capabilities" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>核心能力</a>
-            <span className="footer-sep">•</span>
-            <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>精選專案</a>
-            <span className="footer-sep">•</span>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>經歷與認證</a>
-            <span className="footer-sep">•</span>
-            <a href="./files/林恩汝_履歷.pdf" target="_blank" rel="noopener noreferrer">下載履歷 (PDF)</a>
-            <span className="footer-sep">•</span>
-            <a href="https://www.linkedin.com/in/enju-lin-a16601244" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
+          {/* 右側區塊 (Action Buttons - 水平排列) */}
+          <div className="footer-banner-actions">
+            <a
+              href="mailto:kim05141021@gmail.com"
+              className="footer-act-btn email-btn"
+              title="寄信給我"
+            >
+              <Mail className="w-4 h-4 mr-1.5" />
+              <span>kim05141021@gmail.com</span>
+            </a>
 
-          <p className="footer-copy">© {new Date().getFullYear()} 林恩汝 (Lin). All rights reserved.</p>
+            <a
+              href="./files/林恩汝_履歷.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-act-btn resume-btn"
+              title="下載履歷"
+            >
+              <Download className="w-4 h-4 mr-1.5" />
+              <span>下載完整履歷 (PDF)</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/enju-lin-a16601244"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-act-btn linkedin-btn"
+              title="LinkedIn 檔案"
+            >
+              <Linkedin className="w-4 h-4 mr-1.5 text-sky-400" />
+              <span>LinkedIn 個人檔案</span>
+            </a>
+
+            <a
+              href="#top"
+              className="footer-act-btn trail-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                alert('🌿 MY TRAIL 思考軌跡與筆記整理中，敬請期待！');
+              }}
+              title="探索個人思考筆記"
+            >
+              <span>🌿 探索個人思考筆記 MY TRAIL →</span>
+            </a>
+          </div>
+        </div>
+
+        {/* 底部微型版權列 (Sub-footer) */}
+        <div className="sub-footer-bar">
+          <p className="sub-footer-copy">© 2026 Linda Lin. All rights reserved.</p>
         </div>
       </footer>
     </div>
