@@ -7,7 +7,6 @@ import {
   Layers,
   Workflow,
   Cpu,
-  Send,
   CheckCircle2,
   ChevronDown,
   ChevronUp,
@@ -46,9 +45,6 @@ export default function App() {
   const [expandedCases, setExpandedCases] = useState({});
   // 記錄是否展開更多輔助專案
   const [showAuxiliary, setShowAuxiliary] = useState(false);
-  // 表單資料與送出狀態
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
   const [copiedType, setCopiedType] = useState(null);
 
   const toggleCase = (id) => {
@@ -69,16 +65,6 @@ export default function App() {
     navigator.clipboard.writeText(text);
     setCopiedType(type);
     setTimeout(() => setCopiedType(null), 2000);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 4000);
   };
 
   return (
@@ -407,9 +393,8 @@ export default function App() {
             </p>
           </div>
 
-          <div className="contact-container">
-            {/* 左側名片與下載 */}
-            <div className="contact-info-panel">
+          <div className="contact-centered-wrapper">
+            <div className="contact-info-panel-centered">
               <div className="contact-personal-card">
                 <div className="contact-avatar-badge">林</div>
                 <div>
@@ -417,6 +402,10 @@ export default function App() {
                   <p className="contact-title">Product & Transformation PM</p>
                 </div>
               </div>
+
+              <p className="contact-welcome-statement">
+                歡迎就 AI 產品規劃、數位轉型推進、流程自動化重構或各項專案合作機會進行交流討論！
+              </p>
 
               {/* 履歷下載 Banner */}
               <a
@@ -429,8 +418,8 @@ export default function App() {
                   <Download className="w-5 h-5 text-sky-600" />
                 </div>
                 <div className="banner-text-box">
-                  <span className="banner-title">下載完整簡歷 (PDF)</span>
-                  <span className="banner-sub">點擊查看詳細專案經歷與成果</span>
+                  <span className="banner-title">下載完整履歷 (Download Resume)</span>
+                  <span className="banner-sub">PDF 格式 • 包含完整專案與經歷細節</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-slate-400 ml-auto" />
               </a>
@@ -459,7 +448,9 @@ export default function App() {
                   <div className="detail-icon"><Phone className="w-4 h-4 text-sky-600" /></div>
                   <div className="detail-content-wrap">
                     <span className="detail-label">聯絡電話</span>
-                    <p className="detail-value">0989-236-756</p>
+                    <a href="tel:0989236756" className="detail-value-link">
+                      0989-236-756
+                    </a>
                   </div>
                   <button
                     className="copy-mini-btn"
@@ -495,61 +486,6 @@ export default function App() {
                   </a>
                 </div>
               </div>
-            </div>
-
-            {/* 右側聯絡表單 */}
-            <div className="contact-form-panel">
-              {submitted ? (
-                <div className="form-success">
-                  <CheckCircle2 className="w-14 h-14 text-emerald-600 mb-3" />
-                  <h3>訊息已成功送出！</h3>
-                  <p>感謝您的來信，我將盡快與您聯繫交流 :)</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="contact-form">
-                  <h3 className="form-header-title">發送洽談訊息</h3>
-                  <div className="form-group">
-                    <label htmlFor="name">您的姓名 / 企業單位 <span className="required-star">*</span></label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      placeholder="例如：王總監 / 某某股份有限公司"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="email">您的聯絡信箱 <span className="required-star">*</span></label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      placeholder="yourname@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="message">洽談主旨或專案合作需求 <span className="required-star">*</span></label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      required
-                      placeholder="請簡述您的職缺機會、產品規格梳理或數位轉型需求..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    ></textarea>
-                  </div>
-
-                  <button type="submit" className="submit-btn-executive">
-                    <Send className="w-4 h-4 mr-2 inline" />
-                    發送聯絡訊息
-                  </button>
-                </form>
-              )}
             </div>
           </div>
         </section>
