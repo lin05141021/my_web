@@ -157,7 +157,7 @@ export default function App() {
                 <ArrowRight className="w-4 h-4 ml-1.5 inline" />
               </a>
               <a
-                href="./files/林恩汝_履歷.pdf"
+                href="https://raw.githubusercontent.com/lin05141021/my_web/main/files/%E6%9E%97%E6%81%A9%E6%B1%9D_%E5%B1%A5%E6%AD%B7.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-btn-secondary"
@@ -371,7 +371,7 @@ export default function App() {
             </a>
 
             <a
-              href="./files/林恩汝_履歷.pdf"
+              href="https://raw.githubusercontent.com/lin05141021/my_web/main/files/%E6%9E%97%E6%81%A9%E6%B1%9D_%E5%B1%A5%E6%AD%B7.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-act-btn resume-btn"
