@@ -40,6 +40,14 @@ import {
   credentialBadges
 } from './data/portfolioCategories';
 
+const flagshipCaseOrder = [
+  'case-01-bpr-sop',
+  'case-02-bizsonar',
+  'case-03-musimate',
+  'case-04-my-trail',
+  'case-05-ai-demand-forecasting'
+];
+
 export default function App() {
   // 記錄展開的專案 ID
   const [expandedCases, setExpandedCases] = useState({});
@@ -82,15 +90,14 @@ export default function App() {
           >
             <div className="logo-initials-badge">LIN</div>
             <div className="logo-text-group">
-              <span className="logo-name">林恩汝 (Lin)</span>
-              <span className="logo-sub">Product & Transformation</span>
+              <span className="logo-name">林恩汝</span>
             </div>
           </a>
 
           <div className="nav-links">
             <a href="#capabilities" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>核心能力</a>
             <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>代表專案</a>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>職涯歷練</a>
+            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>職涯經歷</a>
             <a
               href="#footer"
               className="nav-contact-btn"
@@ -109,22 +116,20 @@ export default function App() {
         {/* ======================================================== */}
         <header id="top" className="hero-section hero-compact">
           <div className="hero-content">
-            {/* 頂部關鍵字標籤 (Role Eyebrow) */}
-            <div className="hero-badge-row">
-              <span className="executive-badge">
-                <span className="status-indicator-dot"></span>
-                產品經理 ｜ 數位轉型與流程優化 ｜ AI 應用規劃
-              </span>
-            </div>
+
 
             {/* 主標題 (H1) */}
             <h1 className="hero-name-title">
-              從問題到解方：將複雜業務需求轉化為可落地的數位解方
+              從需求出發，理解問題、定義解方，串連不同角色把想法推進落地。
             </h1>
 
             {/* 副標題 (P) */}
             <p className="hero-name-subtitle">
               具備 9+ 年跨教育、公共制度、科技法人與國際展會歷練。擅長深入第一線業務現場釐清痛點，連結商業、設計與工程團隊，推動 AI 應用、流程自動化與產品功能實際交付。
+            </p>
+
+            <p className="section-desc">
+              Open to roles where I can connect business needs, people and technology to make things work better.
             </p>
 
             {/* 關鍵成效指標 (Stats Row - 水平三欄緊湊排版) */}
@@ -174,7 +179,7 @@ export default function App() {
         {/* ======================================================== */}
         <section id="capabilities" className="section-container section-compact bg-slate-subtle">
           <div className="section-header">
-            <span className="section-tag">CORE COMPETENCIES</span>
+            <span className="section-tag">HOW I WORK</span>
             <h2 className="section-title">核心能力與工作方法</h2>
             <p className="section-desc">
               跨領域不是切換跑道，而是在不同場域淬鍊同一套方法：從現場探索真實痛點，梳理為系統規格，協同跨職能團隊如期落地。
@@ -207,15 +212,15 @@ export default function App() {
         {/* ======================================================== */}
         <section id="cases" className="section-container section-compact">
           <div className="section-header">
-            <span className="section-tag">FEATURED CASE STUDIES</span>
-            <h2 className="section-title">代表專案與落地成果</h2>
+            <span className="section-tag">IN PRACTICE</span>
+            <h2 className="section-title">從問題到實踐</h2>
             <p className="section-desc">
               以 0→1 產品交付、AI 應用導入與業務流程重構為核心的代表性實踐。
             </p>
           </div>
 
           <div className="cases-list-compact">
-            {flagshipCases.map((caseItem) => {
+            {flagshipCaseOrder.map((caseId) => flagshipCases.find((caseItem) => caseItem.id === caseId)).map((caseItem) => {
               const isExpanded = !!expandedCases[caseItem.id];
               return (
                 <article key={caseItem.id} className={`case-card-compact ${isExpanded ? 'is-open' : ''}`}>
@@ -230,6 +235,7 @@ export default function App() {
                     </div>
 
                     <h3 className="case-compact-title">{caseItem.title}</h3>
+                    <p className="case-compact-subtitle">{caseItem.subtitle}</p>
                     <p className="case-compact-summary">{caseItem.summary}</p>
 
                     <button
@@ -252,7 +258,13 @@ export default function App() {
                               <span className="breakdown-step-badge">{item.step}</span>
                               <span className="breakdown-item-label">{item.label}</span>
                             </div>
-                            <p className="breakdown-item-content">{item.content}</p>
+                            {Array.isArray(item.content) ? (
+                              <ul className="breakdown-item-content breakdown-item-content-list">
+                                {item.content.map((detail) => <li key={detail}>{detail}</li>)}
+                              </ul>
+                            ) : (
+                              <p className="breakdown-item-content">{item.content}</p>
+                            )}
                           </div>
                         ))}
                       </div>
@@ -298,18 +310,18 @@ export default function App() {
         <section id="experience" className="section-container section-compact bg-slate-subtle">
           <div className="section-header">
             <span className="section-tag">EXPERIENCE & CREDENTIALS</span>
-            <h2 className="section-title">職涯歷練與專業認證</h2>
+            <h2 className="section-title">職涯經歷與專業認證</h2>
             <p className="section-desc">
               跨公共制度、科技法人與國際展會的實戰推進歷練。
             </p>
           </div>
 
           <div className="experience-credentials-container">
-            {/* 左側：職涯歷練主線 */}
+            {/* 左側：職涯經歷主線 */}
             <div className="career-timeline-panel">
               <h3 className="panel-subhead-title">
                 <Building2 className="w-5 h-5 mr-2 text-sky-600 inline" />
-                職涯歷練主線
+                職涯經歷
               </h3>
               <div className="career-timeline-list">
                 {careerExperiences.map((exp, idx) => (
@@ -333,7 +345,7 @@ export default function App() {
             <div className="credentials-badges-panel">
               <h3 className="panel-subhead-title">
                 <Award className="w-5 h-5 mr-2 text-emerald-600 inline" />
-                重點進修與認證
+                進修與認證
               </h3>
               <div className="badges-flex-wrap">
                 {credentialBadges.map((badge, idx) => (
@@ -355,8 +367,7 @@ export default function App() {
         <div className="footer-compact-banner">
           {/* 左側區塊 (Text) */}
           <div className="footer-banner-left">
-            <h3 className="footer-main-lead">期待與優秀團隊一同創造改變</h3>
-            <p className="footer-sub-lead">歡迎洽談產品管理、數位轉型或跨職能協作機會</p>
+            <h3 className="footer-main-lead">期待一同參與發現需求·創造改變的過程</h3>
           </div>
 
           {/* 右側區塊 (Action Buttons - 水平排列) */}

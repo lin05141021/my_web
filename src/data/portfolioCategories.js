@@ -1,259 +1,262 @@
 // =========================================================
-// 代表專案與落地成果 (Featured Case Studies - 8 項結構化拆解)
+// 代表專案與落地成果 (Featured Case Studies - 5 項結構化拆解)
 // =========================================================
 export const flagshipCases = [
   {
-    id: "case-01-musimate",
-    title: "MusiMate：獨立音樂教師私域營運作業系統 (Studio OS)",
-    subtitle: "0→1 AI 產品",
-    badges: ["0→1 AI 產品交付", "LINE LIFF 全流程", "雙軌 B2B2C 架構", "實機可操作"],
-    summary: "調研 55 位資深教師痛點，協同資深技術團隊打造結合雙 RAG 語音聯絡簿、GPT-4o 截圖對帳與 100% LINE LIFF 體驗的輕量營運系統。",
+    id: "case-03-musimate",
+    title: "Case 03｜MusiMate 音樂教學管理（MusiMate: Low-Friction LMS）",
+    subtitle: "以 LINE LIFF 為載體的低摩擦營運系統，化解教學者的行政摩擦與人情卡點",
+    badges: ["0 到 1 產品規劃", "需求規格 PRD", "LINE LIFF 落地"],
+    summary: "以降低三方摩擦為核心，將音樂教師的排課、通知、課後紀錄與收帳流程收斂在熟悉的 LINE LIFF 生態圈。",
     themeColor: "#0284c7",
     bgPill: "#e0f2fe",
     breakdown: [
       {
         step: "01",
-        label: "背景 (Context)",
-        content: "獨立音樂教師多依賴個人 LINE 處理課務，每週背負 4.5 小時無給行政，且常因人情壓力不敢收取臨時請假費用。"
+        label: "01 CONTEXT",
+        content: "大型國際展會需接待 170 團重要外賓與各部會首長，行政高度依賴紙本、多版本試算表與口頭交代。"
       },
       {
         step: "02",
-        label: "問題 (Problem)",
-        content: "現有工具功能無法整合，且家長抗拒額外App，都靠LINE無結構化的訊息人工整理。"
+        label: "02 PROBLEM",
+        content: "資訊多頭管理導致大量重複人工確認與謄寫，行程變動時容易出錯，且高度依賴個人經驗，新人難以傳承。"
       },
       {
         step: "03",
-        label: "發現 (Discovery)",
-        content: "深度調研 55 位資深樂器教師，確認核心訴求為「減輕行政負擔」與「系統中立代當黑臉」。"
+        label: "03 DISCOVERY",
+        content: "痛點並非人手不足，而是「缺乏單一真實數據源」，導致團隊大量精力消耗在無效的跨部門溝通上。"
       },
       {
         step: "04",
-        label: "我的角色 (My Role)",
-        content: "擔任 UX Product Manager，主導痛點研究、B端Web與C端LIFF雙軌架構、User Flow 與 LINE 全流程規格設計。"
+        label: "04 MY ROLE",
+        content: "主導痛點梳理、工作流重組、評估導入雲端自動化工具、制定 SOP，並帶領 3 位新進同仁無痛接手。"
       },
       {
         step: "05",
-        label: "解法 (Solution)",
-        content: "設計 LINE LIFF 完整體驗（課表/調課/繳費/打卡），並串接 GPT-4o 截圖 OCR 自動對帳與 30 秒語音生成雙 RAG 教材聯絡簿。"
+        label: "05 SOLUTION",
+        content: "建立統一雲端協作樞紐，設定行程變更自動觸發通知，並將繁複規定精簡為第一線圖解檢核表。"
       },
       {
         step: "06",
-        label: "跨端協作 (Collaboration)",
-        content: "與英業達軟體主管、和碩PM緊密協作，實際架設伺服器資料庫與API，並完成前端操作介面串接。"
+        label: "06 COLLABORATION",
+        content: "先以小規模動線試行讓團隊看見省力效益，化解第一線抗拒；透過耐心陪伴與逐步調整完成落地。"
       },
       {
         step: "07",
-        label: "成果 (Outcome)",
-        content: "完成部署與 LINE LIFF 實機驗證，於台灣人工智慧學校 AI PM 專題獲得肯定。"
+        label: "07 OUTCOME",
+        content: "每年節省 1,000+ 小時跨組行政耗損，行程失誤歸零，新進同仁能快速獨立接軌業務。"
       },
       {
         step: "08",
-        label: "反思 (Reflection)",
-        content: "AI 產品的設計理念在於「將複雜算力隱藏在使用者最熟悉的日常後」，以最低摩擦力解決人性與業務痛點，讓 AI 真正融入生活。」"
+        label: "08 REFLECTION",
+        content: "數位轉型的本質不是換工具，而是重新釐清事情為何這樣做，並用系統將繁複耗損接管下來。"
       }
     ]
   },
   {
     id: "case-02-bizsonar",
-    title: "BizsonarAI 展會智慧媒合系統",
-    subtitle: "AI 推薦模型",
-    badges: ["AI 媒合模型", "B2B 平台", "跨廠商技術協作"],
-    summary: "發掘展會資訊不對稱痛點，主動洽談外部廠商導入 AI 推薦模型，重新梳理雙邊配對流程並促成系統正式上線。",
+    title: "Case 02｜BizsonarAI 智慧媒合（AI-Powered Matchmaking System）",
+    subtitle: "從展會雙邊資訊落差出發，將客製化需求轉化為 AI 推薦機制",
+    badges: ["商業痛點定義", "AI 規格規劃", "廠商跨界協同"],
+    summary: "從展會現場的雙邊資訊斷層出發，定義 AI 媒合規格並協同外部工程團隊落地驗證。",
     themeColor: "#6366f1",
     bgPill: "#e0e7ff",
     breakdown: [
       {
         step: "01",
-        label: "背景 (Context)",
-        content: "大型國際 B2B 展會中，參展商與買家難以在海量名單中快速找到真正精準的合作夥伴。"
+        label: "01 CONTEXT",
+        content: "大型展會匯聚 550+ 家廠商與 14 萬人次參觀者，傳統依靠 7 人大會團隊人工引導或買主隨機盲尋，媒合效益極低。"
       },
       {
         step: "02",
-        label: "問題 (Problem)",
-        content: "傳統人工比對耗時費力且配對命中率低，缺乏即時動態推薦機制。"
+        label: "02 PROBLEM",
+        content: "雙邊資訊嚴重斷層——大會不夠了解廠商方案，買主走馬看花，展商找不到對口，大會失去媒合價值。"
       },
       {
         step: "03",
-        label: "發現 (Discovery)",
-        content: "從第一線營運觀察發現，供需雙方的標籤維度定義不一，是導致配對失準的根本原因。"
+        label: "03 DISCOVERY",
+        content: "借鑒平台策略思維，意識到客製化解決方案無法靠固定表單過濾，唯有透過語意理解（AI）才能彈性比對需求。"
       },
       {
         step: "04",
-        label: "我的角色 (My Role)",
-        content: "發掘問題、主導異業廠商洽談，負責需求規格定義與雙邊使用者的 UX 互動流程規劃。"
+        label: "04 MY ROLE",
+        content: "主動發起專案並提出 AI 媒合構想；擔任大會與外部工程團隊轉譯者，定義功能規格與現場 UX 流程；協調展商參與測試。"
       },
       {
         step: "05",
-        label: "解法 (Solution)",
-        content: "梳理買賣雙方需求屬性，定義推薦特徵權重邏輯，重新設計直覺的雙向確認配對流程。"
+        label: "05 SOLUTION",
+        content: "建立「語意化需求輸入 → AI 關聯性權重計算 → 雙向推薦」機制，將龐雜的人工作業轉為系統輔助推薦。"
       },
       {
         step: "06",
-        label: "跨端協作 (Collaboration)",
-        content: "居中協調外部工程團隊與內部展務營運同仁，對齊系統功能與商業上線時程。"
+        label: "06 COLLABORATION",
+        content: "向工程團隊精確同步大會現場的動線與法規限制；協調參展商配合資料建檔，確保系統能在展期前順利驗證。"
       },
       {
         step: "07",
-        label: "成果 (Outcome)",
-        content: "AI 媒合系統正式上線並導入實際展會，有效提升買賣雙方預約媒合的互動轉換率。"
+        label: "07 OUTCOME",
+        content: "於 2026 年 3 月智慧城市展 AI 專區正式落地驗證；大幅縮短精準合作夥伴的搜尋時間（由參展工程團隊第一手驗證），展後該系統由技術方持續迭代至其他活動中。"
       },
       {
         step: "08",
-        label: "反思 (Reflection)",
-        content: "AI 專案落地的核心在於商業流程的重構，技術演算法必須精準服務現場使用場景。"
+        label: "08 REFLECTION",
+        content: "AI 的起點不是演算法有多炫，而是現場有沒有一個「因為太複雜、太依賴人力而長期被放棄」的真實問題。"
       }
     ]
   },
   {
-    id: "case-03-bpr-sop",
-    title: "展務營運自動化與流程 SOP 重構",
-    subtitle: "流程轉型 BPR",
-    badges: ["流程重構 (BPR)", "自動化資料流", "年省 1,000+ 小時"],
-    summary: "診斷跨部門展務行政作業斷點，導入自動化工具重構資料流與標準作業機制，年省逾千小時高重複工時。",
+    id: "case-01-bpr-sop",
+    title: "Case 01｜展務流程重構與自動化（Exhibition Operations BPR）",
+    subtitle: "重新梳理跨部門資訊流，以自動化工具取代高耗損人工作業",
+    badges: ["BPR 業務流程重組", "內部流程自動化", "SOP 制度化"],
+    summary: "以單一真實數據源重整展務資訊流，降低跨部門溝通耗損，年節省 1,000+ 小時行政工時。",
     themeColor: "#059669",
     bgPill: "#d1fae5",
     breakdown: [
       {
         step: "01",
-        label: "背景 (Context)",
-        content: "展會籌備期涉及大量參展商資格審核、繳件追蹤與名冊整理，長期重度依賴人工登打。"
+        label: "01 CONTEXT",
+        content: "家教老師 98.2% 依賴 LINE 溝通排課，需在零碎課後時間手動處理調課與行事曆，訊息漏接直接影響教學收入。"
       },
       {
         step: "02",
-        label: "問題 (Problem)",
-        content: "跨組別反覆搬移資料導致錯誤率高，行政流程成為展務推動的最大產能瓶頸。"
+        label: "02 PROBLEM",
+        content: "表面是課後行政繁多，深層原因則是「家長因未參與課堂而缺乏安心感，衍生大量溝通」；同時「人情壓力讓老師難以落實請假取消規則」。"
       },
       {
         step: "03",
-        label: "發現 (Discovery)",
-        content: "盤點端到端作業節點，發現 60% 人力耗損在手動跨平台比對與重複通知。"
+        label: "03 DISCOVERY",
+        content: "以「降低三方摩擦」為核心，放棄讓用戶下載獨立 App，將流程全部收斂在最低門檻的 LINE LIFF 生態圈中。"
       },
       {
         step: "04",
-        label: "我的角色 (My Role)",
-        content: "主導行政流程盤點，評估並導入自動化資料流工具，重建跨組標準作業程序 (SOP)。"
+        label: "04 MY ROLE",
+        content: "主導問題定義、55 份問卷與訪談、PRD 規劃、C 端 LINE LIFF 介面實作；主動接手 B 端學生管理、通知與收帳狀態之 UI 與 API 串接。"
       },
       {
         step: "05",
-        label: "解法 (Solution)",
-        content: "建立跨表單自動同步機制，設置例外自動警示與排程通知規則，取代人工反覆核算。"
+        label: "05 SOLUTION",
+        content: [
+          "功能取捨：首版專注排程、通知、GPT-4o 課後週報與階梯式取消規則；範圍過大的社群與辨識未穩定的練琴打卡果斷延後。",
+          "架構妥協：捨棄高成本金流串接，改採「上傳截圖 ＋ GPT-4o 辨識 ＋ 教師確認（Human-in-the-Loop）」低成本對帳。"
+        ]
       },
       {
         step: "06",
-        label: "跨端協作 (Collaboration)",
-        content: "與第一線團隊密切溝通作業習慣，主持內部操作培訓，順利推動組織變更管理。"
+        label: "06 COLLABORATION",
+        content: "每週 3 次敏捷視訊會議，以 GitHub 進行分支管理；在工程師提醒下，學會由純前端渲染轉向遵循 API 規範呼叫真實資料庫。"
       },
       {
         step: "07",
-        label: "成果 (Outcome)",
-        content: "每年為團隊節省超過 1,000 小時重複行政時數，顯著消弭資料手動疏漏。"
+        label: "07 OUTCOME",
+        content: "B 端與 C 端真實流程串接與測試完成；GPT-4o 摘要、LIFF 排程與資料庫通知連動順暢。"
       },
       {
         step: "08",
-        label: "反思 (Reflection)",
-        content: "數位轉型不盲目追求大型系統，先理順作業動線、消弭斷點，才是自動化創造真實價值的關鍵。"
+        label: "08 REFLECTION",
+        content: "好系統的本質是降低門檻，而非炫技；規則的存在不是限制自由，而是保護彼此的信任。"
       }
     ]
   },
   {
-    id: "case-04-pos-dashboard",
-    title: "餐飲 AI 銷量預測 POS 決策儀表板",
-    subtitle: "數據產品轉譯",
-    badges: ["20+ 場需求訪談", "數據特徵化", "多角色 Dashboard"],
-    summary: "深入執行 20+ 場第一線訪談，將門市營運經驗轉化為數據特徵，規劃總部與門市雙層決策儀表板。",
-    themeColor: "#d97706",
-    bgPill: "#fef3c7",
-    breakdown: [
-      {
-        step: "01",
-        label: "背景 (Context)",
-        content: "參與餐飲零售業 AI 銷量預測研究專案，需將預測模型轉化為店長每日可執行的備料指引。"
-      },
-      {
-        step: "02",
-        label: "問題 (Problem)",
-        content: "複雜的統計圖表與演算法數值對門市人員門檻過高，無法有效輔助即時決策。"
-      },
-      {
-        step: "03",
-        label: "發現 (Discovery)",
-        content: "執行 20+ 場門市深度訪談，發現店長真正需要的是「具體訂貨建議量」而非「統計機率分佈」。"
-      },
-      {
-        step: "04",
-        label: "我的角色 (My Role)",
-        content: "負責訪綱設計、現場深度訪談、將業務直覺轉譯為資料特徵，並規劃介面資訊架構。"
-      },
-      {
-        step: "05",
-        label: "解法 (Solution)",
-        content: "切分「總部宏觀策略」與「門市每日操作」兩種視圖，設計直覺視覺化的決策儀表板。"
-      },
-      {
-        step: "06",
-        label: "跨端協作 (Collaboration)",
-        content: "與資料科學家及軟體開發團隊對齊指標演算法，確保前端呈現精準反映模型輸出。"
-      },
-      {
-        step: "07",
-        label: "成果 (Outcome)",
-        content: "完成兩套角色的介面原型與驗收驗證，建立從使用者真實需求到資料產品設計的標準方法。"
-      },
-      {
-        step: "08",
-        label: "反思 (Reflection)",
-        content: "資料產品的重點在於「決策轉譯」，先釐清使用者在特定情境要做出什麼決定，再給予精確資訊。"
-      }
-    ]
-  },
-  {
-    id: "case-05-my-trail",
-    title: "MY TRAIL：數位個人空間，全端實踐實驗站",
-    subtitle: "系統建構與自驅探索",
-    badges: ["自建個人系統", "前端網頁架構", "AI 協同開發", "知識管理"],
-    summary: "從實踐個人所學技能出發，自主以 HTML/CSS/JS 與AI協作工具打造個人數位展間，實踐從0到1的全端自驅交付。",
+    id: "case-04-my-trail",
+    title: "Case 04｜MY TRAIL 數位空間（MY TRAIL: Digital Garden）",
+    subtitle: "擺脫傳統履歷框架，從資訊架構到前端實作打造的個人思考展間",
+    badges: ["資訊架構 IA", "前端開發實作", "AI 輔助工作流"],
+    summary: "從資訊架構、內容文案到前端部署，打造一個用來展示個人思考脈絡與實作能力的數位展間。",
     themeColor: "#4f46e5",
     bgPill: "#e0e7ff",
     breakdown: [
       {
         step: "01",
-        label: "背景 (Context)",
-        content: "跨領域學習希望自己能實踐從設計端跨域工程端，並以個人數位空間為題紀錄各專案實踐過程。"
+        label: "01 CONTEXT",
+        content: "起初為了練習前端開發與換位理解工程思維，選擇以個人作品為題；但在製作過程中發現自己真正想梳理的，是一路影響思考的脈絡。"
       },
       {
         step: "02",
-        label: "問題 (Problem)",
-        content: "純自然語言AI架站工具技術尚難以靈活客製呈現與更加感性的內容。"
+        label: "02 PROBLEM",
+        content: "傳統履歷只能羅列職稱與成果，容易將跨領域經驗割裂，無法完整呈現一個人「如何思考、如何理解問題」的底層脈絡。"
       },
       {
         step: "03",
-        label: "發現 (Discovery)",
-        content: "梳理個人閱讀與整理習慣，確認核心需求為「極簡載入體驗」、「清晰的模組化資訊架構」與「完全由自己掌握的程式碼底層」。"
+        label: "03 DISCOVERY",
+        content: "刻意排除制式的學經歷與職稱標籤，將網站從一般的 Portfolio 作品集，重新定義為「個人數位展間」。"
       },
       {
         step: "04",
-        label: "我的角色 (My Role)",
-        content: "全端獨立負責：涵蓋站點資訊架構、UI/UX 介面設計、前端程式撰寫與 GitHub Pages 雲端部署。"
+        label: "04 MY ROLE",
+        content: "完全自主獨立完成——負責網站定位、資訊架構 (IA)、UX/UI 視覺、內容文案，到 HTML/CSS 前端實作與部署；AI 擔任除錯與加速協作者。"
       },
       {
         step: "05",
-        label: "解法 (Solution)",
-        content: "採用語意化 HTML5、現代 CSS Grid 與純 JavaScript，並善用 AI 協同開發（Vibe Coding）快速除錯與迭代，搭建響應式 (RWD) 版本。"
+        label: "05 SOLUTION",
+        content: "將原本常見的「作品卡片列表」改造成「主題式展間」，以 WHAT SHAPED ME、Understand Before Solve 等維度，呈現思考如何形成。"
       },
       {
         step: "06",
-        label: "跨端協作 (Collaboration)",
-        content: "實踐「人機協同」開發工作流，將 AI 工具作為個人專屬技術顧問，主導規格定義、邊界測試與程式碼審查。"
+        label: "06 COLLABORATION",
+        content: "以「AI-native workflow」推進開發——由我主導體驗設計與架構判斷，AI 協助生成程式碼片段與跨瀏覽器排版除錯。"
       },
       {
         step: "07",
-        label: "成果 (Outcome)",
-        content: "成功完成獨立站點部署，建立可長期維護的數位展間，並實證非工程背景亦能透過自驅學習完成系統性交付。"
+        label: "07 OUTCOME",
+        content: "完成一個可獨立運作、持續更新沉澱的個人數位空間，兼具程式實作與深度思維展示。"
       },
       {
         step: "08",
-        label: "反思 (Reflection)",
-        content: "自己動手寫程式不是為了成為純工程師，而是為了深刻理解技術邊界與開發邏輯，進而在產品專案中與工程團隊更有效率地對話。"
+        label: "08 REFLECTION",
+        content: "打造網站如同做產品——不是把想說的話全塞進去，而是先決定訪客需要透過什麼樣的路徑，來理解這個空間。"
+      }
+    ]
+  },
+  {
+    id: "case-05-ai-demand-forecasting",
+    title: "Case 05｜AI 銷量預測與營運儀表板（AI Demand Forecasting & POS Dashboard）",
+    subtitle: "將第一線經驗直覺轉化為數據特徵，為不同管理層級設計輔助決策儀表板",
+    badges: ["使用者需求訪談", "資訊架構與儀表板", "AI 輔助決策"],
+    summary: "從門市與總部的不同決策情境出發，將質性需求轉化為資料欄位與分級儀表板原型。",
+    themeColor: "#d97706",
+    bgPill: "#fef3c7",
+    breakdown: [
+      {
+        step: "01",
+        label: "01 CONTEXT",
+        content: "於法人研究機構實習期間，參與大型連鎖餐飲集團之數位轉型專案，探索以 AI 模型協助門市備料與庫存預測的可行性。"
+      },
+      {
+        step: "02",
+        label: "02 PROBLEM",
+        content: "門市備料高度依賴店長直覺經驗，陷入「備多易過期報廢、備少恐斷貨流失顧客」的兩難；總部統籌原物料調度，亦面臨叫貨不及時的斷貨風險。"
+      },
+      {
+        step: "03",
+        label: "03 DISCOVERY",
+        content: "訪談發現「門市店長」與「總部管理層」的決策維度截然不同——店長需要即時的行動預警（如結合天氣的備料提醒）；總部則需要掌握跨店物料流速與宏觀趨勢。"
+      },
+      {
+        step: "04",
+        label: "04 MY ROLE",
+        content: "主導設計第一線訪談大綱並參與門市店長訪談；負責將質性需求梳理為系統資料欄位，規劃初步資訊架構（IA）與儀表板原型，隨後與資深設計師協作優化並向業主提案。"
+      },
+      {
+        step: "05",
+        label: "05 SOLUTION",
+        content: "設計分層輔助決策儀表板——門市端整合氣溫變數與即時庫存，提供彈性時差的備料提醒；總部端建立跨店銷量排行與安全水位分佈，輔助物料統籌排程。"
+      },
+      {
+        step: "06",
+        label: "06 COLLABORATION",
+        content: "與單位內 AI 工程師對齊模型所需之決策特徵欄位；與資深設計師密切共編，在易讀性與圖表視覺階層上完成多輪迭代。"
+      },
+      {
+        step: "07",
+        label: "07 OUTCOME",
+        content: "完成從現場調研、決策邏輯收斂到分級儀表板原型設計，順利通過業主提案驗收，後續由工程單位正式接手開發上線。"
+      },
+      {
+        step: "08",
+        label: "08 REFLECTION",
+        content: "AI 產品的價值不在於展示算力多強，而在於能否準確命中現場決策的關鍵時刻；儀表板上的數字必須對齊使用者的權責邊界，才能真正輔助行動。"
       }
     ]
   }
@@ -291,42 +294,43 @@ export const auxiliaryCases = [
 export const capabilities = [
   {
     step: "01",
-    phase: "需求探索 (Discover)",
-    lead: "深入現場探索真實痛點，梳理跨角色認知差距。",
+    phase: "UNDERSTAND",
+    lead: "先理解問題，從現場與使用者找出真正需求。",
     points: [
-      "使用者深度訪談",
-      "跨角色痛點梳理",
-      "業務作業斷點診斷"
+      "20+ 使用者訪談",
+      "第一線流程觀察",
+      "展會痛點梳理"
     ]
   },
   {
     step: "02",
-    phase: "規格定義 (Define)",
-    lead: "將模糊需求轉化為結構化規格與直覺互動路徑。",
+    phase: "DEFINE",
+    lead: "把模糊需求整理成可以被執行的方向。",
     points: [
-      "撰寫 PRD / User Story",
-      "規劃資訊架構 (IA) 與 User Flow",
-      "定義驗收標準"
+      "MVP 優先級",
+      "User Flow",
+      "流程與 SOP 重構"
     ]
   },
   {
     step: "03",
-    phase: "跨界連結 (Connect)",
-    lead: "對齊商務、技術與合規邊界，建立團隊高信任共識。",
+    phase: "CONNECT",
+    lead: "串連不同角色，讓需求能被理解、討論與實現。",
     points: [
-      "商業語言轉譯技術規格",
-      "資安制度推進 (ISO 27001)",
-      "跨部門共識對齊"
+      "Business × Design × Engineering",
+      "工程協作",
+      "技術供應商"
     ]
   },
   {
     step: "04",
-    phase: "交付落地 (Deliver)",
-    lead: "以敏捷驗證迅速試錯，固化為標準作業產出實際人效。",
+    phase: "DELIVER",
+    lead: "不只提出想法，而是推進到實際落地。",
     points: [
-      "MVP 輕量驗證",
-      "自動化腳本與 AI 工具導入",
-      "驗收測試 (UAT) 與 SOP 固化"
+      "AI 媒合系統上線",
+      "MVP 開發",
+      "流程自動化",
+      "年度節省 1,000+ 小時"
     ]
   }
 ];
