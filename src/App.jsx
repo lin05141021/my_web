@@ -132,19 +132,19 @@ export default function App() {
               Open to roles where I can connect business needs, people and technology to make things work better.
             </p>
 
-            {/* 關鍵成效指標 (Stats Row - 水平三欄緊湊排版) */}
+            {/* 三大核心能力 */}
             <div className="hero-stats-compact-row">
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">1,000+ 小時</span>
-                <span className="stat-compact-label">流程自動化年省工時</span>
+                <span className="stat-compact-number">需求洞察</span>
+                <span className="stat-compact-label">從現場釐清真正問題</span>
               </div>
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">20+ 位</span>
-                <span className="stat-compact-label">深度質性需求訪談</span>
+                <span className="stat-compact-number">跨域落地</span>
+                <span className="stat-compact-label">串連團隊推進產品交付</span>
               </div>
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">70%+</span>
-                <span className="stat-compact-label">團隊新客業務貢獻率</span>
+                <span className="stat-compact-number">AI × 自動化</span>
+                <span className="stat-compact-label">讓流程更有效率、可持續</span>
               </div>
             </div>
 
