@@ -4,6 +4,9 @@
 /* ========================================================= */
 
 :root {
+  --content-gutter: 1.25rem;
+  --content-max-width: 1000px;
+
   /* 基礎背景色盤 */
   --bg-page: #f8fafc;
   --bg-surface: #ffffff;
@@ -71,9 +74,26 @@ body {
 }
 
 /* ========================================================= */
-/* 頂部導覽列 Navbar (極致精簡磨砂)                          */
+/* 頂部導覽列與可用狀態                                  */
 /* ========================================================= */
-.navbar {
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -83,23 +103,94 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.nav-container {
-  max-width: 1100px;
+.header-container {
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0.65rem 1.25rem;
+  padding: 0.72rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-logo {
+.nav-brand-group {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.625rem;
   text-decoration: none;
-  color: var(--text-primary);
 }
 
+.brand-badge {
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease;
+}
+
+.nav-brand-group:hover .brand-badge {
+  background: #1e293b;
+}
+
+.nav-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.625rem;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #065f46;
+}
+
+.status-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-item,
+.nav-cta {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.nav-item:hover {
+  color: var(--color-accent-blue);
+}
+
+.nav-cta {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #253145;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* 保留舊類別樣式的相容別名，避免其他頁面樣式失效 */
 .logo-initials-badge {
   width: 32px;
   height: 32px;
@@ -115,58 +206,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-.logo-text-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-name {
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1.15;
-}
-
-.logo-sub {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: color 0.15s ease;
-}
-
-.nav-links a:hover {
-  color: var(--color-accent-blue);
-}
-
-.nav-contact-btn {
-  background: var(--color-primary);
-  color: #ffffff !important;
-  padding: 0.4rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem !important;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-btn);
-}
-
-.nav-contact-btn:hover {
-  background: #253145;
-  transform: translateY(-1px);
-}
-
 /* ========================================================= */
 /* 區塊 01｜首頁主視覺 (Hero Section - 緊湊高轉化)             */
 /* ========================================================= */
@@ -177,7 +216,7 @@ body {
 }
 
 .hero-content {
-  max-width: 1000px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
@@ -247,8 +286,8 @@ body {
 }
 
 .stat-compact-number {
-  font-size: 1.45rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 500;
   color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 0.25rem;
@@ -272,6 +311,7 @@ body {
 .hero-btn-primary {
   display: inline-flex;
   align-items: center;
+  gap: 0.42rem;
   background: var(--gradient-primary);
   color: #ffffff;
   padding: 0.7rem 1.5rem;
@@ -287,6 +327,12 @@ body {
   background: #253145;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px 0 rgba(15, 23, 42, 0.28);
+}
+
+.hero-arrow-down-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  flex-shrink: 0;
 }
 
 .hero-btn-secondary {
@@ -314,12 +360,12 @@ body {
 /* 通用區塊容器 (Section Styles)                              */
 /* ========================================================= */
 .section-container {
-  max-width: 1000px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
 .section-compact {
-  padding: 3rem 1.25rem;
+  padding: 3rem var(--content-gutter);
 }
 
 .bg-slate-subtle {
@@ -817,22 +863,21 @@ body {
 /* 區塊 06｜聯絡資訊與頁尾整併 (Compact All-in-One Footer)     */
 /* ========================================================= */
 .footer-all-in-one {
-  background: #253145;
-  color: #ffffff;
-  border-top: 1px solid #253145;
-  padding: 1.85rem 1.25rem 1.35rem;
+  width: 100%;
+  max-width: none;
+  margin: 2rem 0 0;
+  background: #ffffff;
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem var(--content-gutter) 1.2rem;
 }
 
 .footer-compact-banner {
-  max-width: 1000px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding-bottom: 1.35rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  flex-wrap: wrap;
+  display: block;
+  padding-bottom: 1.55rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .footer-banner-left {
@@ -840,34 +885,44 @@ body {
   flex-direction: column;
 }
 
+.footer-eyebrow {
+  color: var(--color-accent-blue);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.35rem;
+}
+
 .footer-main-lead {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.2rem;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
 }
 
 .footer-sub-lead {
-  font-size: 0.84rem;
-  color: #94a3b8;
+  max-width: 760px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 .footer-banner-actions {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  margin-top: 1.35rem;
 }
 
-/* 頁尾動作按鈕 (全圓角、精緻暗色調微光) */
 .footer-act-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.5rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -881,9 +936,9 @@ body {
 }
 
 .email-btn {
-  background: #253145;
-  color: #f8fafc;
-  border: 1px solid #334155;
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .email-btn:hover {
@@ -893,10 +948,10 @@ body {
 }
 
 .resume-btn {
-  background: #1f5f7e;
+  background: var(--text-primary);
   color: #ffffff;
-  border: 1px solid #0284c7;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+  border: 1px solid var(--text-primary);
+  box-shadow: var(--shadow-btn);
 }
 
 .resume-btn:hover {
@@ -906,9 +961,9 @@ body {
 }
 
 .linkedin-btn {
-  background: #253145;
-  color: #f8fafc;
-  border: 1px solid #334155;
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .linkedin-btn:hover {
@@ -918,9 +973,9 @@ body {
 }
 
 .trail-btn {
-  background: rgba(16, 185, 129, 0.12);
-  color: #3da99b;
-  border: 1px solid rgba(24, 80, 62, 0.35);
+  background: #ffffff;
+  color: #059669;
+  border: 1px solid #bbf7d0;
 }
 
 .trail-btn:hover {
@@ -930,14 +985,80 @@ body {
 }
 
 .sub-footer-bar {
-  max-width: 1000px;
-  margin: 0.95rem auto 0;
-  text-align: center;
+  max-width: var(--content-max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.15rem auto 0;
+}
+
+.footer-secondary-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-secondary-links a {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.footer-secondary-links a:hover {
+  color: var(--color-accent-blue);
 }
 
 .sub-footer-copy {
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--text-muted);
+}
+
+.footer-email-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.7rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  background: #f8fafc;
+}
+
+.footer-email-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  color: var(--text-light);
+}
+
+.footer-email-copy a {
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.footer-action-divider {
+  width: 1px;
+  height: 1.35rem;
+  background: var(--border-color);
+}
+
+.footer-email-copy button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.footer-email-copy button svg {
+  width: 0.85rem;
+  height: 0.85rem;
 }
 
 /* ========================================================= */
@@ -983,7 +1104,62 @@ body {
     align-items: flex-start;
   }
 
-  .nav-links {
+  .footer-all-in-one {
+    margin-top: 1.25rem;
+    padding: 1.5rem var(--content-gutter) 1rem;
+  }
+
+  .footer-banner-actions,
+  .footer-email-copy {
+    width: 100%;
+  }
+
+  .footer-banner-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .footer-act-btn {
+    justify-content: center;
+  }
+
+  .footer-email-copy {
+    min-width: 0;
+  }
+
+  .footer-email-copy a {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .timeline-header-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .timeline-header-row>div {
+    min-width: 0;
+  }
+
+  .timeline-sep {
+    display: none;
+  }
+
+  .timeline-role {
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .sub-footer-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-menu {
     display: none;
   }
 }

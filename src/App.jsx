@@ -77,37 +77,38 @@ export default function App() {
 
   return (
     <div className="portfolio-app modern-executive-theme compact-layout">
-      {/* 頂部導覽列 Navbar */}
-      <nav className="navbar">
-        <div className="nav-container">
+      {/* 頂部導覽列 */}
+      <header className="site-header">
+        <div className="header-container">
           <a
             href="#top"
-            className="nav-logo"
+            className="nav-brand-group"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="logo-initials-badge">LIN</div>
-            <div className="logo-text-group">
-              <span className="logo-name">林恩汝</span>
+            <div className="brand-badge">LIN</div>
+            <div className="nav-status-pill">
+              <span className="status-dot"></span>
+              <span className="status-text">Currently Available</span>
             </div>
           </a>
 
-          <div className="nav-links">
-            <a href="#capabilities" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>核心能力</a>
-            <a href="#cases" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>代表專案</a>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>職涯經歷</a>
+          <nav className="nav-menu">
+            <a href="#capabilities" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>工作方法</a>
+            <a href="#cases" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>代表專案</a>
+            <a href="#experience" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>經歷認證</a>
             <a
               href="#footer"
-              className="nav-contact-btn"
+              className="nav-cta"
               onClick={(e) => { e.preventDefault(); handleNavClick('footer'); }}
             >
               聯絡交流
             </a>
-          </div>
+          </nav>
         </div>
-      </nav>
+      </header>
 
       {/* 主要頁面內容 */}
       <main>
@@ -135,16 +136,16 @@ export default function App() {
             {/* 三大核心能力 */}
             <div className="hero-stats-compact-row">
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">需求洞察</span>
-                <span className="stat-compact-label">從現場釐清真正問題</span>
+                <span className="stat-compact-number">業務流程重組</span>
+                <span className="stat-compact-label">跨部門資訊流整合 · 化解重複行政耗損</span>
               </div>
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">跨域落地</span>
-                <span className="stat-compact-label">串連團隊推進產品交付</span>
+                <span className="stat-compact-number">AI 與產品驗證</span>
+                <span className="stat-compact-label">從現場痛點出發 · 輕量化規格與 PoC 實踐</span>
               </div>
               <div className="hero-stat-compact-item">
-                <span className="stat-compact-number">AI × 自動化</span>
-                <span className="stat-compact-label">讓流程更有效率、可持續</span>
+                <span className="stat-compact-number">複雜利害關係人</span>
+                <span className="stat-compact-label">穿梭體制與技術 · 轉譯需求推進跨界合作</span>
               </div>
             </div>
 
@@ -159,7 +160,7 @@ export default function App() {
                 }}
               >
                 瀏覽代表專案
-                <ArrowRight className="w-4 h-4 ml-1.5 inline" />
+                <ChevronDown className="hero-arrow-down-icon" />
               </a>
               <a
                 href="https://raw.githubusercontent.com/lin05141021/my_web/main/files/%E6%9E%97%E6%81%A9%E6%B1%9D_%E5%B1%A5%E6%AD%B7.pdf"
@@ -361,26 +362,17 @@ export default function App() {
       </main>
 
       {/* ======================================================== */}
-      {/* 區塊 06｜聯絡資訊與頁尾整併 (Compact All-in-One Footer)     */}
+      {/* 區塊 06｜下一步與聯絡資訊 */}
       {/* ======================================================== */}
-      <footer id="footer" className="footer-all-in-one">
+      <footer id="footer" className="site-footer footer-all-in-one">
         <div className="footer-compact-banner">
-          {/* 左側區塊 (Text) */}
           <div className="footer-banner-left">
-            <h3 className="footer-main-lead">期待一同參與發現需求·創造改變的過程</h3>
+            <span className="footer-eyebrow">NEXT STEP</span>
+            <h3 className="footer-main-lead">期待與您展開交流</h3>
+            <p className="footer-sub-lead">期待有機會與您共同推動發掘需求落地解決的過程。</p>
           </div>
 
-          {/* 右側區塊 (Action Buttons - 水平排列) */}
           <div className="footer-banner-actions">
-            <a
-              href="mailto:kim05141021@gmail.com"
-              className="footer-act-btn email-btn"
-              title="寄信給我"
-            >
-              <Mail className="w-4 h-4 mr-1.5" />
-              <span>kim05141021@gmail.com</span>
-            </a>
-
             <a
               href="https://raw.githubusercontent.com/lin05141021/my_web/main/files/%E6%9E%97%E6%81%A9%E6%B1%9D_%E5%B1%A5%E6%AD%B7.pdf"
               target="_blank"
@@ -392,31 +384,23 @@ export default function App() {
               <span>下載完整履歷 (PDF)</span>
             </a>
 
-            <a
-              href="https://www.linkedin.com/in/enju-lin-a16601244"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-act-btn linkedin-btn"
-              title="LinkedIn 檔案"
-            >
-              <Linkedin className="w-4 h-4 mr-1.5 text-sky-400" />
-              <span>LinkedIn 個人檔案</span>
-            </a>
-
-            <a
-              href="https://lin05141021.github.io/my_trail/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-act-btn trail-btn"
-              title="探索個人思考筆記 MY TRAIL"
-            >
-              <span>🌿 探索個人思考筆記 MY TRAIL →</span>
-            </a>
+            <div className="footer-email-copy">
+              <Mail className="footer-email-icon" />
+              <a href="mailto:kim05141021@gmail.com">kim05141021@gmail.com</a>
+              <span className="footer-action-divider"></span>
+              <button type="button" onClick={() => handleCopy('kim05141021@gmail.com', 'footer-email')}>
+                <Copy />
+                {copiedType === 'footer-email' ? '已複製' : '複製'}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* 底部微型版權列 (Sub-footer) */}
         <div className="sub-footer-bar">
+          <div className="footer-secondary-links">
+            <a href="https://www.linkedin.com/in/enju-lin-a16601244" target="_blank" rel="noopener noreferrer">LinkedIn 個人檔案 ↗</a>
+            <a href="https://lin05141021.github.io/my_trail/" target="_blank" rel="noopener noreferrer">🌿 MY TRAIL 思考展間 ↗</a>
+          </div>
           <p className="sub-footer-copy">© 2026 Linda Lin. All rights reserved.</p>
         </div>
       </footer>
