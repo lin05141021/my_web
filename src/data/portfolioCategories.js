@@ -4,9 +4,11 @@
 export const flagshipCases = [
   {
     id: "case-03-musimate",
-    title: "Case 03｜MusiMate 音樂教學管理（MusiMate: Low-Friction LMS）",
+    title: "MusiMate 音樂教學管理（Low-Friction Studio OS）",
     subtitle: "以 LINE LIFF 為載體的低摩擦營運系統，化解教學者的行政摩擦與人情卡點",
-    badges: ["0 到 1 產品規劃", "需求規格 PRD", "LINE LIFF 落地"],
+    badges: ["0到1產品規劃", "需求規格 PRD", "Human-in-the-loop"],
+    documentLabel: "查看完整規格簡報 (PDF)",
+    pdfUrl: "https://drive.google.com/file/d/10Nfr4lOSpch7CxEVjJAjA8EbaiHoIln2/preview",
     summary: "以降低三方摩擦為核心，將音樂教師的排課、通知、課後紀錄與收帳流程收斂在熟悉的 LINE LIFF 生態圈。",
     themeColor: "#0284c7",
     bgPill: "#e0f2fe",
@@ -14,50 +16,55 @@ export const flagshipCases = [
       {
         step: "01",
         label: "01 CONTEXT",
-        content: "大型國際展會需接待 170 團重要外賓與各部會首長，行政高度依賴紙本、多版本試算表與口頭交代。"
+        content: "音樂教師多以 LINE 與家長聯繫；調查顯示，98.2% 的受訪者仰賴 LINE 溝通排課。教師必須在零碎課後時間處理調課、行事曆與收款等行政工作。"
       },
       {
         step: "02",
         label: "02 PROBLEM",
-        content: "資訊多頭管理導致大量重複人工確認與謄寫，行程變動時容易出錯，且高度依賴個人經驗，新人難以傳承。"
+        content: "排課與課務資訊散落在對話中，容易增加確認與追蹤成本；家長無法掌握課堂進度而反覆詢問，教師也常因人情壓力難以清楚執行請假與取消規則。"
       },
       {
         step: "03",
         label: "03 DISCOVERY",
-        content: "痛點並非人手不足，而是「缺乏單一真實數據源」，導致團隊大量精力消耗在無效的跨部門溝通上。"
+        content: "核心問題不是再增加一個管理工具，而是降低教師、家長與學生之間的溝通摩擦。產品應沿用使用者熟悉的 LINE 入口，讓課務管理自然融入既有互動。"
       },
       {
         step: "04",
         label: "04 MY ROLE",
-        content: "主導痛點梳理、工作流重組、評估導入雲端自動化工具、制定 SOP，並帶領 3 位新進同仁無痛接手。"
+        content: "主導問題定義與產品規劃，執行 55 份問卷與訪談、整理 PRD，並參與 C 端 LINE LIFF 介面實作；及 B 端的 UI 設計優化。"
       },
       {
         step: "05",
         label: "05 SOLUTION",
-        content: "建立統一雲端協作樞紐，設定行程變更自動觸發通知，並將繁複規定精簡為第一線圖解檢核表。"
+        content: [
+          "以訪談統點收斂 MVP：優先針對智慧排課、通知、對帳、課後週報與防放鳥機制；社群及AI辨識技術上卡關的打卡先排除於首版範圍。",
+          "收款流程採家長上傳轉帳截圖， GPT-4o 辨識，並HITL讓家長核對，取代承擔高成本金流串接。"
+        ]
       },
       {
         step: "06",
         label: "06 COLLABORATION",
-        content: "先以小規模動線試行讓團隊看見省力效益，化解第一線抗拒；透過耐心陪伴與逐步調整完成落地。"
+        content: "共8週協作過程，透過 GitHub 分支管理共同開發；與工程夥伴對齊 API 規範，讓介面由前端展示逐步接上真實資料庫與服務流程。"
       },
       {
         step: "07",
         label: "07 OUTCOME",
-        content: "每年節省 1,000+ 小時跨組行政耗損，行程失誤歸零，新進同仁能快速獨立接軌業務。"
+        content: "在 8 週內完成可實際操作的 MVP，串接 B 端與 C 端主要流程，涵蓋 LIFF 排程、資料庫通知及 GPT-4o 課後摘要，並邀請音樂教師參與測試驗證。目前產品仍處於 MVP 適用性測試階段，尚未正式行銷對外上線。"
       },
       {
         step: "08",
         label: "08 REFLECTION",
-        content: "數位轉型的本質不是換工具，而是重新釐清事情為何這樣做，並用系統將繁複耗損接管下來。"
+        content: "好的產品不必要求使用者改變習慣，而是把必要的管理流程放進熟悉的使用情境；清楚的規則與適度自動化，能減少溝通耗損，也守住彼此的信任。"
       }
     ]
   },
   {
     id: "case-02-bizsonar",
-    title: "Case 02｜BizsonarAI 智慧媒合（AI-Powered Matchmaking System）",
-    subtitle: "從展會雙邊資訊落差出發，將客製化需求轉化為 AI 推薦機制",
-    badges: ["商業痛點定義", "AI 規格規劃", "廠商跨界協同"],
+    title: "BizsonarAI 智慧媒合系統（AI Matchmaking MVP）",
+    subtitle: "從展會雙邊資訊落差出發，定義演算法媒合機制並催生首版商用產品。",
+    badges: ["商業痛點定義", "AI 規格規劃", "商用產品 0 到 1"],
+    documentLabel: "查看專案簡報 (PDF)",
+    pdfUrl: "https://drive.google.com/file/d/1i5iomNDtF3eVgYloXpbfBkOs060tKUNL/preview",
     summary: "從展會現場的雙邊資訊斷層出發，定義 AI 媒合規格並協同外部工程團隊落地驗證。",
     themeColor: "#6366f1",
     bgPill: "#e0e7ff",
@@ -106,9 +113,11 @@ export const flagshipCases = [
   },
   {
     id: "case-01-bpr-sop",
-    title: "Case 01｜展務流程重構與自動化（Exhibition Operations BPR）",
+    title: "展務流程重構與自動化（Exhibition Operations BPR）",
     subtitle: "重新梳理跨部門資訊流，以自動化工具取代高耗損人工作業",
-    badges: ["BPR 業務流程重組", "內部流程自動化", "SOP 制度化"],
+    badges: ["BPR 業務流程重組", "內部流程自動化", "年省千小時工時"],
+    documentLabel: "查看重組架構簡報 (PDF)",
+    pdfUrl: "https://drive.google.com/file/d/1Xw5d-Ey5Ej8hPjAvn4CwwvmGLSGOJhnC/preview",
     summary: "以單一真實數據源重整展務資訊流，降低跨部門溝通耗損，年節省 1,000+ 小時行政工時。",
     themeColor: "#059669",
     bgPill: "#d1fae5",
@@ -116,45 +125,42 @@ export const flagshipCases = [
       {
         step: "01",
         label: "01 CONTEXT",
-        content: "家教老師 98.2% 依賴 LINE 溝通排課，需在零碎課後時間手動處理調課與行事曆，訊息漏接直接影響教學收入。"
+        content: "大型國際展會需接待 170 團重要外賓與各部會首長，行政高度依賴紙本、多版本試算表與口頭交代。"
       },
       {
         step: "02",
         label: "02 PROBLEM",
-        content: "表面是課後行政繁多，深層原因則是「家長因未參與課堂而缺乏安心感，衍生大量溝通」；同時「人情壓力讓老師難以落實請假取消規則」。"
+        content: "資訊多頭管理導致大量重複人工確認與謄寫，行程變動時容易出錯，且高度依賴個人經驗，新人難以傳承。"
       },
       {
         step: "03",
         label: "03 DISCOVERY",
-        content: "以「降低三方摩擦」為核心，放棄讓用戶下載獨立 App，將流程全部收斂在最低門檻的 LINE LIFF 生態圈中。"
+        content: "痛點並非人手不足，而是「缺乏單一真實數據源」，導致團隊大量精力消耗在無效的跨部門溝通上。"
       },
       {
         step: "04",
         label: "04 MY ROLE",
-        content: "主導問題定義、55 份問卷與訪談、PRD 規劃、C 端 LINE LIFF 介面實作；主動接手 B 端學生管理、通知與收帳狀態之 UI 與 API 串接。"
+        content: "主導痛點梳理、工作流重組、評估導入雲端自動化工具、制定 SOP，並帶領 3 位新進同仁無痛接手。"
       },
       {
         step: "05",
         label: "05 SOLUTION",
-        content: [
-          "功能取捨：首版專注排程、通知、GPT-4o 課後週報與階梯式取消規則；範圍過大的社群與辨識未穩定的練琴打卡果斷延後。",
-          "架構妥協：捨棄高成本金流串接，改採「上傳截圖 ＋ GPT-4o 辨識 ＋ 教師確認（Human-in-the-Loop）」低成本對帳。"
-        ]
+        content: "建立統一雲端協作樞紐，設定行程變更自動觸發通知，並將繁複規定精簡為第一線圖解檢核表。"
       },
       {
         step: "06",
         label: "06 COLLABORATION",
-        content: "每週 3 次敏捷視訊會議，以 GitHub 進行分支管理；在工程師提醒下，學會由純前端渲染轉向遵循 API 規範呼叫真實資料庫。"
+        content: "先以小規模動線試行讓團隊看見省力效益，化解第一線抗拒；透過耐心陪伴與逐步調整完成落地。"
       },
       {
         step: "07",
         label: "07 OUTCOME",
-        content: "B 端與 C 端真實流程串接與測試完成；GPT-4o 摘要、LIFF 排程與資料庫通知連動順暢。"
+        content: "每年節省 1,000+ 小時跨組行政耗損，行程失誤歸零，新進同仁能快速獨立接軌業務。"
       },
       {
         step: "08",
         label: "08 REFLECTION",
-        content: "好系統的本質是降低門檻，而非炫技；規則的存在不是限制自由，而是保護彼此的信任。"
+        content: "數位轉型的本質不是換工具，而是重新釐清事情為何這樣做，並用系統將繁複耗損接管下來。"
       }
     ]
   },
@@ -211,9 +217,11 @@ export const flagshipCases = [
   },
   {
     id: "case-05-ai-demand-forecasting",
-    title: "Case 05｜AI 銷量預測與營運儀表板（AI Demand Forecasting & POS Dashboard）",
-    subtitle: "將第一線經驗直覺轉化為數據特徵，為不同管理層級設計輔助決策儀表板",
-    badges: ["使用者需求訪談", "資訊架構與儀表板", "AI 輔助決策"],
+    title: "餐飲門市銷量預測與 POS Dashboard",
+    subtitle: "將第一線營運直覺轉化為模型特徵欄位，跨層級打造數據輔助儀表板。",
+    badges: ["數據特徵轉譯", "POS 系統數據", "決策儀表板設計"],
+    documentLabel: "查看分析成果 (PDF)",
+    pdfUrl: "https://drive.google.com/file/d/1RuIMFFgOYPnNcTrUVpkQ8AsmfNSQhcfd/preview",
     summary: "從門市與總部的不同決策情境出發，將質性需求轉化為資料欄位與分級儀表板原型。",
     themeColor: "#d97706",
     bgPill: "#fef3c7",
@@ -258,6 +266,27 @@ export const flagshipCases = [
         label: "08 REFLECTION",
         content: "AI 產品的價值不在於展示算力多強，而在於能否準確命中現場決策的關鍵時刻；儀表板上的數字必須對齊使用者的權責邊界，才能真正輔助行動。"
       }
+    ]
+  },
+  {
+    id: "case-06-taipei-metro-go",
+    title: "台北捷運 GO 服務流程重整（黑客松競賽企劃）",
+    subtitle: "在高壓時限內重整乘客動線痛點，產出商業策略與端到端完整企劃書。",
+    badges: ["黑客松提案", "服務流程設計", "完整商業企劃書"],
+    documentLabel: "查看完整企劃書 (PDF)",
+    pdfUrl: "https://drive.google.com/file/d/1NDxT6rQy7B9hhRlOz2Shc9DZ2-2Ws8cg/preview",
+    summary: "從電梯使用者的無障礙動線出發，同時以出口景點資訊拓展台北捷運 GO App 的使用情境。",
+    themeColor: "#0f766e",
+    bgPill: "#ccfbf1",
+    breakdown: [
+      { step: "01", label: "01 CONTEXT", content: "參與 2023 年台北捷運 GO App 優化 UI/UX 設計競賽，與夥伴共同發想如何讓 App 回應更多元的乘車需求，並拓展日常使用情境。" },
+      { step: "02", label: "02 PROBLEM", content: "需要搭乘電梯的乘客，進出捷運站約需一般乘客三倍時間；對行動不便者而言，繞行、尋找指標或在閘門口停下確認方向，都會增加移動負擔。另一方面，列車班距約三分鐘，多數乘客不會為了查班次而特地開啟 App，日常使用理由有限。" },
+      { step: "03", label: "03 DISCOVERY", content: "問題不只在於提供路線資訊，而是讓不同移動能力的乘客都能更順暢完成進出站；同時，若 App 只服務搭車當下的查詢需求，就難以吸引非必要查詢的乘客持續使用。" },
+      { step: "04", label: "04 MY ROLE", content: "主要負責服務流程設計與 Wireframe，將無障礙搭乘情境與拓展 App 使用情境的構想整理為操作流程及介面草圖。" },
+      { step: "05", label: "05 SOLUTION", content: "規劃以最短距離為優先的電梯搭乘路線，減少繞行、找指標及停留確認方向的情況；另提出推薦出口周邊景點資訊，讓 App 不只提供乘車查詢，也能支援目的地探索。" },
+      { step: "06", label: "06 COLLABORATION", content: "與競賽夥伴共同發想服務方向，並由我負責把討論內容轉化為流程設計與 Wireframe，讓無障礙動線及出口資訊構想能在介面中具體呈現。" },
+      { step: "07", label: "07 OUTCOME", content: "完成台北捷運 GO App 優化競賽提案的服務流程與 Wireframe，涵蓋電梯使用者的最短路線規劃及出口周邊景點資訊構想；本案未取得或未記錄競賽名次與量化成效。" },
+      { step: "08", label: "08 REFLECTION", content: "交通是生活的一部分。App 不應只在搭車當下提供資訊，更應融入日常，協助人們事先規劃行程，並將沿途與目的地的探索自然納入移動體驗。" }
     ]
   }
 ];

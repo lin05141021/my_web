@@ -21,6 +21,7 @@ import {
   GraduationCap,
   Target,
   FileText,
+  FolderOpen,
   Clock,
   Award,
   Users,
@@ -40,13 +41,25 @@ import {
   credentialBadges
 } from './data/portfolioCategories';
 
-const flagshipCaseOrder = [
-  'case-01-bpr-sop',
-  'case-02-bizsonar',
-  'case-03-musimate',
-  'case-04-my-trail',
-  'case-05-ai-demand-forecasting'
+const caseGroups = [
+  {
+    title: '流程重組與數位轉型｜Operational BPR & Workflow',
+    highlight: '深入非標準化組織現場，建立單一數據源與標準化 SOP，消除營運耗損。',
+    caseIds: ['case-01-bpr-sop']
+  },
+  {
+    title: '0 → 1 AI 產品規格與系統落地｜AI Products & System Specs',
+    highlight: '從需求出發定義產品邊界，撰寫完整 PRD 並兼顧人機協作閉環。',
+    caseIds: ['case-03-musimate', 'case-02-bizsonar']
+  },
+  {
+    title: '數據特徵轉譯與策略提案｜Data Insights & Hackathon Proposal',
+    highlight: '將現場營運體感轉譯為數據特徵，並具備產出端到端完整企劃書的策略能力。',
+    caseIds: ['case-05-ai-demand-forecasting', 'case-06-taipei-metro-go']
+  }
 ];
+
+const portfolioFolderUrl = 'https://drive.google.com/drive/u/3/folders/1Q9oPpDDyiNkZRsiGj3bGQ9q2w92s5quf';
 
 export default function App() {
   // 記錄展開的專案 ID
@@ -99,6 +112,10 @@ export default function App() {
             <a href="#capabilities" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('capabilities'); }}>工作方法</a>
             <a href="#cases" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('cases'); }}>代表專案</a>
             <a href="#experience" className="nav-item" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}>經歷認證</a>
+            <a href={portfolioFolderUrl} target="_blank" rel="noopener noreferrer" className="nav-portfolio-link">
+              <FolderOpen aria-hidden="true" />
+              雲端作品集總覽
+            </a>
             <a
               href="#footer"
               className="nav-cta"
@@ -131,6 +148,9 @@ export default function App() {
 
             <p className="section-desc">
               Open to roles where I can connect business needs, people and technology to make things work better.
+            </p>
+            <p className="hero-project-note">
+              本站由個人獨立完成資訊架構（IA）、UI 設計並以 HTML/CSS/JavaScript 原生前端實作落地，實踐端到端的數位產品思維。
             </p>
 
             {/* 三大核心能力 */}
@@ -221,59 +241,88 @@ export default function App() {
           </div>
 
           <div className="cases-list-compact">
-            {flagshipCaseOrder.map((caseId) => flagshipCases.find((caseItem) => caseItem.id === caseId)).map((caseItem) => {
-              const isExpanded = !!expandedCases[caseItem.id];
-              return (
-                <article key={caseItem.id} className={`case-card-compact ${isExpanded ? 'is-open' : ''}`}>
-                  {/* 卡片主體 (扁平精簡：標籤、標題、1 句摘要、展開按鈕) */}
-                  <div className="case-compact-main">
-                    <div className="case-header-row">
-                      <div className="case-badges-wrap">
-                        {caseItem.badges.map((b, i) => (
-                          <span key={i} className="case-mini-badge">{b}</span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <h3 className="case-compact-title">{caseItem.title}</h3>
-                    <p className="case-compact-subtitle">{caseItem.subtitle}</p>
-                    <p className="case-compact-summary">{caseItem.summary}</p>
-
-                    <button
-                      type="button"
-                      className="btn-toggle-compact"
-                      onClick={() => toggleCase(caseItem.id)}
-                      aria-expanded={isExpanded}
-                    >
-                      <span>{isExpanded ? '收合解方細節' : '展開解方細節與規格'}</span>
-                    </button>
-                  </div>
-
-                  {/* 展開內容 (8 格結構拆解) */}
-                  {isExpanded && (
-                    <div className="case-breakdown-expand">
-                      <div className="breakdown-grid-8">
-                        {caseItem.breakdown.map((item) => (
-                          <div key={item.step} className="breakdown-grid-item">
-                            <div className="breakdown-item-header">
-                              <span className="breakdown-step-badge">{item.step}</span>
-                              <span className="breakdown-item-label">{item.label}</span>
+            {caseGroups.map((group) => (
+              <section className="case-group" key={group.title}>
+                <header className="case-group-header">
+                  <h3>{group.title}</h3>
+                  <p>{group.highlight}</p>
+                </header>
+                <div className="case-group-list">
+                  {group.caseIds.map((caseId) => flagshipCases.find((item) => item.id === caseId)).filter(Boolean).map((caseItem) => {
+                    const isExpanded = !!expandedCases[caseItem.id];
+                    return (
+                      <article key={caseItem.id} className={`case-card-compact ${isExpanded ? 'is-open' : ''}`}>
+                        {/* 卡片主體 (扁平精簡：標籤、標題、1 句摘要、展開按鈕) */}
+                        <div className="case-compact-main">
+                          <div className="case-header-row">
+                            <div className="case-badges-wrap">
+                              {caseItem.badges.map((b, i) => (
+                                <span key={i} className="case-mini-badge">{b}</span>
+                              ))}
                             </div>
-                            {Array.isArray(item.content) ? (
-                              <ul className="breakdown-item-content breakdown-item-content-list">
-                                {item.content.map((detail) => <li key={detail}>{detail}</li>)}
-                              </ul>
-                            ) : (
-                              <p className="breakdown-item-content">{item.content}</p>
-                            )}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </article>
-              );
-            })}
+
+                          <h3 className="case-compact-title">{caseItem.title}</h3>
+                          <p className="case-compact-subtitle">{caseItem.subtitle}</p>
+                          <p className="case-compact-summary">{caseItem.summary}</p>
+
+                          {caseItem.pdfUrl ? (
+                            <a
+                              className="case-document-link"
+                              href={caseItem.pdfUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <FileText aria-hidden="true" />
+                              {caseItem.documentLabel}
+                              <ArrowUpRight aria-hidden="true" />
+                            </a>
+                          ) : (
+                            <button className="case-document-link is-unavailable" type="button" disabled>
+                              <FileText aria-hidden="true" />
+                              {caseItem.documentLabel}
+                              <span>連結待補</span>
+                            </button>
+                          )}
+
+                          <button
+                            type="button"
+                            className="btn-toggle-compact"
+                            onClick={() => toggleCase(caseItem.id)}
+                            aria-expanded={isExpanded}
+                          >
+                            <span>{isExpanded ? '收合解方細節' : '展開解方細節與規格'}</span>
+                          </button>
+                        </div>
+
+                        {/* 展開內容 (8 格結構拆解) */}
+                        {isExpanded && (
+                          <div className="case-breakdown-expand">
+                            <div className="breakdown-grid-8">
+                              {caseItem.breakdown.map((item) => (
+                                <div key={item.step} className="breakdown-grid-item">
+                                  <div className="breakdown-item-header">
+                                    <span className="breakdown-step-badge">{item.step}</span>
+                                    <span className="breakdown-item-label">{item.label}</span>
+                                  </div>
+                                  {Array.isArray(item.content) ? (
+                                    <ul className="breakdown-item-content breakdown-item-content-list">
+                                      {item.content.map((detail) => <li key={detail}>{detail}</li>)}
+                                    </ul>
+                                  ) : (
+                                    <p className="breakdown-item-content">{item.content}</p>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
           </div>
 
           {/* ======================================================== */}
@@ -370,6 +419,11 @@ export default function App() {
             <span className="footer-eyebrow">NEXT STEP</span>
             <h3 className="footer-main-lead">期待與您展開交流</h3>
             <p className="footer-sub-lead">期待有機會與您共同推動發掘需求落地解決的過程。</p>
+            <p className="footer-portfolio-note">
+              想了解更多專案細節與 Side Projects？歡迎前往
+              <a href={portfolioFolderUrl} target="_blank" rel="noopener noreferrer">完整作品集雲端資料夾</a>
+              檢視原始成果報告。
+            </p>
           </div>
 
           <div className="footer-banner-actions">
